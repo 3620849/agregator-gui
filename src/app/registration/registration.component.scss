@@ -1,0 +1,30 @@
+formContainer {
+    
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+.formContainer > * {
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+  }
+  button{
+    width: auto;    
+    margin-right: 20px; 
+    margin-bottom:20px;
+}  
+.eye{
+  font-size: 20px!important;
+}
+.header{
+  background:rgb(255, 215, 64);
+  padding:10px;
+}
+mat-icon {
+  margin-right: 10px;
+}
+.registration{
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+<h1 class="header">Registration</h1>
+<ng-container [ngSwitch]="status">
+    <ng-container *ngSwitchCase="'form'">
+        <form [formGroup]="form">
+            <div class="formContainer">
+                <mat-form-field>
+                    <input matInput tabindex="-1" formControlName="mail" placeholder="e-mail">
+                </mat-form-field>
+                <mat-form-field>
+                    <input #pass type="password" tabindex="-1" formControlName="password" matInput
+                        placeholder="Password">
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear" (mousedown)="visible()"
+                        (mouseup)="visible()">
+                        <mat-icon class="eye">visibility</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div class=" buttonsRow">
+                    <button type="submit" mat-stroked-button (click)="create()">Create</button>
+                    <button mat-stroked-button (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </ng-container>
+    <ng-container *ngSwitchCase="'progress'">
+        <div>
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'success'">
+        <div>success</div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'fail'">
+        <div>fail</div>
+        <div>{{failMessage}}</div>
+      </ng-container>
+</ng-container>
+     

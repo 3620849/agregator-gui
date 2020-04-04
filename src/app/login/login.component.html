@@ -1,0 +1,62 @@
+<h1 class="header">Login</h1>
+<ng-container [ngSwitch]="status">
+  <ng-container *ngSwitchCase="'form'">
+    <form [formGroup]="form">
+      <div class="formContainer">
+        <mat-form-field>
+          <input matInput tabindex="-1" formControlName="mail" placeholder="e-mail">
+        </mat-form-field>
+        <mat-form-field>
+          <input #pass type="password" tabindex="-1" formControlName="password" matInput placeholder="Password">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (mousedown)="visible()" (mouseup)="visible()">
+            <mat-icon class="eye">visibility</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="buttonsRow">
+          <button class="registration" mat-raised-button color="primary" (click)="register()">New user</button>
+        </div>
+        <div class="buttonsRow">
+          <button  mat-raised-button  (click)="auth2('ggl')" disabled >
+            <fa-icon [icon]="ggl"></fa-icon>
+            Google
+          </button>   
+          <button  mat-raised-button  (click)="auth2('twt')" disabled>
+            <fa-icon [icon]="twt"></fa-icon> 
+            Twiter
+          </button> 
+          <button  mat-raised-button  (click)="auth2('fb')">
+            <fa-icon [icon]="fb"></fa-icon>
+            Facebook
+          </button>  
+          <button  mat-raised-button  (click)="auth2('vk')">
+            <fa-icon [icon]="vk"></fa-icon>
+            Vkontakte
+          </button>
+          <button  mat-raised-button (click)="auth2('git')">
+            <fa-icon [icon]="git"></fa-icon>            
+            Github 
+          </button>      
+        </div>
+        
+        
+
+          <div class=" buttonsRow">
+            <button type="submit" mat-stroked-button (click)="login()">Sign in</button>
+            <button mat-stroked-button (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+
+  </ng-container>
+  <ng-container *ngSwitchCase="'progress'">
+    <div>
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'success'">
+    <div>success</div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'fail'">
+    <div>fail</div>
+  </ng-container>
+</ng-container>

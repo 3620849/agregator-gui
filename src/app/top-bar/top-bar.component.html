@@ -1,0 +1,23 @@
+<div class="top-bar-component">
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-icon-button >
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Site agregator</span>        
+        <span class="example-spacer"></span> 
+        <button *ngIf="!isLogedIn" mat-mini-fab color="accent" (click)="openLoginDialog()">
+                <mat-icon>fingerprint</mat-icon>
+        </button>
+        <div *ngIf="isLogedIn">
+            <button mat-button [matMenuTriggerFor]="menu" mat-mini-fab color="accent" >
+                <mat-icon>face</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <app-user-details></app-user-details>
+            </mat-menu>
+        </div>
+        
+    </mat-toolbar-row>
+</mat-toolbar>
+</div>
