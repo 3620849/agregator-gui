@@ -87,12 +87,15 @@ export class LoginComponent implements OnInit {
     this.storage.scanTokenChanges();
     switch (provider) {
       case 'git':        
-        window.open(settings.git_userAuthorizationUrl,'Authorization',options);        
-        break;
+        window.open(settings.git_userAuthorizationUrl,'Authorization',options); break;
         case 'vk': 
-        window.open(settings.vk_userAuthorizationUrl,'Authorization',options);
+        window.open(settings.vk_userAuthorizationUrl,'Authorization',options); break;
         case 'fb': 
-        window.open(settings.fb_userAuthorizationUrl,'Authorization',options);        
+        window.open(settings.fb_userAuthorizationUrl,'Authorization',options); break;
+        case 'ggl': 
+        window.open(settings.ggl_userAuthorizationUrl,'Authorization',options); break;
+        case 'twt': 
+        window.open(settings.twt_userAuthorizationUrl,'Authorization',options); break;      
         break;
     }
     this.storage.broadcastToken.subscribe(res=>{
