@@ -5,5 +5,6 @@ export enum TokenType{
     FB_OAUTH_TOKEN="Fb-Oauth-Token",
     GGL_OAUTH_TOKEN="Ggl-Oauth-Token",
     TWT_OAUTH_TOKEN="Twt-Oauth-Token",
+    DIS_OAUTH_TOKEN="Dis-Oauth-Token",
 
 }

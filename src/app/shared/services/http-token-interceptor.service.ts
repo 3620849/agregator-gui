@@ -14,7 +14,6 @@ export class HttpTokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.storage.getToken().token;   
     const tokenType = this.storage.getToken().tokenType;
-    console.log("ITNERCEPTOR",tokenType);
     if (!request.headers.has("NOT_INTERCEPT")) {
       if (token) {
         request = request.clone({

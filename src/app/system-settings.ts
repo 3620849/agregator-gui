@@ -8,4 +8,6 @@ export class SystemSettings {
     public  twt_userAuthorizationUrl:string;
     
     public  ggl_userAuthorizationUrl:string; 
+
+    public  dis_userAuthorizationUrl:string; 
 }

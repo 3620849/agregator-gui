@@ -3,8 +3,7 @@ import {MatDialogRef,MatDialog} from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { LoginService } from './login.service';
-import { StorageService } from '../shared/services/storage.service';
-import { Constants } from '../shared/constants';
+import { StorageService } from '../shared/services/storage.service'; 
 import { faFacebookF,faGithub,faVk,faGoogle,faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { RegistrationComponent } from '../registration/registration.component';
 import { UserData } from '../shared/model/userData'; 
@@ -41,6 +40,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    console.log("fb",this.fb);
   	this.form =  this.formBuilder.group({
 					mail:[,[]],
 					password:[,[]]
@@ -94,8 +94,8 @@ export class LoginComponent implements OnInit {
         window.open(settings.fb_userAuthorizationUrl,'Authorization',options); break;
         case 'ggl': 
         window.open(settings.ggl_userAuthorizationUrl,'Authorization',options); break;
-        case 'twt': 
-        window.open(settings.twt_userAuthorizationUrl,'Authorization',options); break;      
+        case 'dis': 
+        window.open(settings.dis_userAuthorizationUrl,'Authorization',options); break;      
         break;
     }
     this.storage.broadcastToken.subscribe(res=>{

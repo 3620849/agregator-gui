@@ -36,7 +36,7 @@ export class SsoComponent implements OnInit {
         case "vk": tokenType=TokenType.VK_OAUTH_TOKEN;break;
         case "fb": tokenType=TokenType.FB_OAUTH_TOKEN;break;
         case "ggl": tokenType=TokenType.GGL_OAUTH_TOKEN;break;
-        case "twt": tokenType=TokenType.TWT_OAUTH_TOKEN;break;
+        case "dis": tokenType=TokenType.DIS_OAUTH_TOKEN;break;
         default: this.status="fial no such provider";setTimeout(()=>{window.close();},3000);
       }         
       this.storage.updateToken(new Token(response['access_token'],true,tokenType));               
