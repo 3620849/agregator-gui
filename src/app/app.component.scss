@@ -1,0 +1,57 @@
+@import "colors.scss";
+//  .container{
+//      display: flex;
+//      position: absolute;
+//      direction: column;
+//  }
+// .content{
+//     float: left;
+//     min-width: 500px;
+//     min-height: 1000px;
+//     background-color: $bg-grey;
+// }
+// .left-menu{ 
+//     position: sticky; 
+//     top:0;
+//     float: left;
+//     background-color: red;
+//     width: 200px;
+//     height: 100vh;
+// }
+// .right-menu{ 
+//     position: sticky;
+//     top:0;
+//     float: left;
+//     background-color: blue;
+//     width: 200px;
+//     height: 100vh;
+// }
+
+
+.top-bar-container{
+    position: relative;
+}
+%cont{
+    background-color: $bg-grey;
+    
+   // top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.side-cont{ 
+    @extend %cont;
+}
+.side-cont-sso{
+    @extend %cont;
+    top:0;
+}
+
+.side-user-details{
+    z-index: -1;
+    position: fixed;
+    background-color: $bg-grey;
+}
+.slider-control{
+    margin: 15px;
+}

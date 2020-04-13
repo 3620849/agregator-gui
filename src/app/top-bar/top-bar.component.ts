@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { StorageService } from '../shared/services/storage.service';
-import { UserDetailsComponent } from '../user-details/user-details.component'; 
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-top-bar',
@@ -11,6 +11,8 @@ import { UserDetailsComponent } from '../user-details/user-details.component';
 })
 export class TopBarComponent implements OnInit {
   isLogedIn:boolean;
+  @Input("userDetailsMenu")
+  userDetailsMenu: MatDrawer;
   constructor(public dialog: MatDialog,private storage:StorageService ) {
     storage.startKeepAlive();
   }
@@ -28,9 +30,6 @@ export class TopBarComponent implements OnInit {
 	    });
   }
   openUserDialog(): void {
-    const dialogRef = this.dialog.open(UserDetailsComponent, {
-      panelClass:'user-component',
-      width: '500px',      
-    });
+    this.userDetailsMenu.toggle();
 }
 }

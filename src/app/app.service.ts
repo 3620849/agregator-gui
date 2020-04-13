@@ -9,7 +9,10 @@ import { SystemSettings } from './system-settings';
 export class AppService {
   public systemSettings:SystemSettings;
   constructor(private http:HttpClient) { 
-    http.get<SystemSettings>(environment.base_url+"/api/p/systemSettings").subscribe(res=>{
+    
+  }
+  loadSystemSettings(){
+    this.http.get<SystemSettings>(environment.base_url+"/api/p/systemSettings").subscribe(res=>{
       this.systemSettings = res;
     })
   }

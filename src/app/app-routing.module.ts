@@ -5,8 +5,11 @@ import { SsoComponent } from './sso/sso.component';
 
 
 const routes: Routes = [
+{path:'', loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule)},
 {path:'login',component:LoginComponent},
-{path:'sso',component:SsoComponent}
+{path:'sso',component:SsoComponent},
+{path:'forum', loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule)},
+{ path: 'shop', loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule) }
 ];
 
 @NgModule({

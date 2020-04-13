@@ -1,0 +1,40 @@
+.forum-component{
+    display: flex;
+    flex-direction:column;
+    //justify-content: left;
+     align-items: center;
+    flex-wrap: wrap;  
+}
+
+.message-box{
+    margin: 10px;
+    
+    text-align: center;
+    background-color: floralwhite;
+    border-radius: 8px;
+    border: 1px solid rgb(197, 197, 197);
+} 
+.message-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+.like {
+    position: sticky;
+    top: 50px;
+    margin: 5px;
+}
+.example-card {
+    max-width: 500px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .separator{
+      width: 100%;
+      height: 1px;
+      background-color: grey;
+  }

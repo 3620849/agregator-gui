@@ -21,7 +21,6 @@ export class HttpTokenInterceptor implements HttpInterceptor {
         })
       }
     }  
-    console.log(request);
     return next.handle(request.clone({
       headers: request.headers.delete("NOT_INTERCEPT")}));
   }

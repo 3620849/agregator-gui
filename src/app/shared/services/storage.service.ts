@@ -20,7 +20,13 @@ export class StorageService {
   
   constructor(private storage: LocalStorageService, private loginService: LoginService) {
     this.currentState = this.storage.retrieve(Constants.TOKEN);
-    this.broadcastToken = new BehaviorSubject(this.currentState);
+    if(this.currentState==undefined){
+      let token = new Token(null, false, null);
+      this.broadcastToken = new BehaviorSubject(token);
+      this.updateToken(token);
+    }else{
+      this.broadcastToken = new BehaviorSubject(this.currentState);
+    }
   }
   startKeepAlive() {
     this.tokenHeartBeat();
@@ -42,7 +48,6 @@ export class StorageService {
     if (token == null || token.token == null) {      
       this.cleanToken();
     }
-    console.log("start check",token);
     this.loginService.checkToken(token).subscribe(response => {
       if (response.body === true) {
         token.isValid = true;
