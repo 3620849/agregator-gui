@@ -1,3 +1,4 @@
+@import "colors.scss";
 
 .message-container{
     display: flex;
@@ -14,8 +15,39 @@
     max-width: 700px;
     margin-top: 10px;
   }
+  .image-st{
+    max-height: 100px;
+    width: auto;
+  } 
+  .author-data{
+    width: 100%;
+  }
+  .author-data span *{
+    margin: 5px;
+  }
+  .avatar{
+    background-size: cover; 
+    float: right;
+    position: relative;
+    bottom: -10px;
+    background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+  }
+  .user-name{
+    float: right;
+    margin-top: 15px;
+    margin-left:15px;
+  }
   @media only screen and (max-width: 700px) {
     .like {
        display: none;
     }
   }
+    @media only screen and (min-width: 700px) {
+      .mobile-likes {
+         display: none;
+      }
+    }

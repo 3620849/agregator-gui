@@ -10,6 +10,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';  
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatDividerModule} from '@angular/material/divider'; 
 @NgModule({
   declarations: [],
   exports: [
@@ -23,7 +24,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatProgressSpinnerModule,
     MatMenuModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDividerModule
     ]
 })
 export class ProjectMaterialModuleModule {
