@@ -41,7 +41,10 @@ export class SsoComponent implements OnInit {
       }         
       this.storage.updateToken(new Token(response['access_token'],true,tokenType));               
       this.status='success'; 
-      setTimeout(()=>{window.close();},3000);
+      this.storage.broadcastToken.subscribe(result=>{
+        window.close()
+      });
+      
     },error=>{
       this.status='error cant get token'; 
       setTimeout(()=>{window.close();},3000);

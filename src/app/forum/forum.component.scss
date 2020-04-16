@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 .forum-component{
     display: flex;
     flex-direction:column;
@@ -6,6 +8,14 @@
     flex-wrap: wrap;  
 }
 
+:host ::ng-deep .mat-tab-header {
+    position: sticky;
+top:0;
+}
+.tab-header{
+    position: sticky;
+    top: 0;
+}
 .message-box{
     margin: 10px;
     
@@ -14,20 +24,7 @@
     border-radius: 8px;
     border: 1px solid rgb(197, 197, 197);
 } 
-.message-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10px;
-}
-.like {
-    position: sticky;
-    top: 50px;
-    margin: 5px;
-}
-.example-card {
-    max-width: 500px;
-  }
+
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -38,3 +35,11 @@
       height: 1px;
       background-color: grey;
   }
+
+.mat-tab-group{
+    background-color: $bg-grey;
+    height: calc(100% - 64px);
+    min-height: calc(100% - 64px);
+    min-width: 100%; width: 100%;
+    margin: 0px;position: fixed;
+}

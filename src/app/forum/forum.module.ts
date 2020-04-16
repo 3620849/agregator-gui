@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ForumComponent } from './forum.component';
 import { ForumRoutingModule } from './forum-routing.module';
 import { ProjectMaterialModuleModule } from '../shared/project-material-module/project-material-module.module';
+import { PostComponent } from './post/post.component';
 
 
 
 @NgModule({
-  declarations: [ForumComponent],
+  declarations: [ForumComponent, PostComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,
