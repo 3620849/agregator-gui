@@ -1,0 +1,34 @@
+.treasure{
+    height: 100%;
+    font-size:13px;
+}
+.treasurebox{
+    display: inline-block;
+    width: 20%;
+}
+.treasure-desc{
+    display: inline-block;
+    width: 80%
+}
+.user{ 
+    display: inline-block;
+    margin-left: 5px;
+  }
+  .avatar{
+    bottom: -9px;
+    background-size: cover; 
+    position: relative; 
+    background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+
+  }
+  .user-name{     
+    display: inline-block;
+    margin-left: 5px;
+  }
+  mat-card{
+      margin-bottom: 10px;
+  }

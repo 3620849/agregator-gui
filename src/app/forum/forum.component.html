@@ -1,46 +1,65 @@
 <div class="forum-component">
-  <mat-tab-group  calss="mat-tab-group" mat-stretch-tabs >
-    <mat-tab  >
+  <mat-tab-group calss="mat-tab-group" mat-stretch-tabs>
+
+    <mat-tab>
       <ng-template class="tab-header" mat-tab-label>
+
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
         Top
       </ng-template>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
+      <div class="site-options">
+        <app-site-options></app-site-options>
+      </div>
+      <div class="post-block">
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+      </div>
     </mat-tab>
-  
+
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">fiber_new</mat-icon>
         New
       </ng-template>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
+      <div class="site-options">
+        <app-site-options></app-site-options>
+      </div>
+      <div class="post-block">
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+      </div>
+
     </mat-tab>
-  
+
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">event icon</mat-icon>
         Monthly
       </ng-template>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
-      <app-post></app-post>
+      <div class="site-options">
+        <app-site-options></app-site-options>
+      </div>
+      <div class="post-block">
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+        <app-post></app-post>
+      </div>
+
     </mat-tab>
   </mat-tab-group>
-    
-  
-  
-  
-  
-  
- 
+
+
+
+
+
+
+
 </div>

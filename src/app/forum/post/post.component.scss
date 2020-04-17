@@ -10,43 +10,79 @@
     position: sticky;
     top: 0;
     margin: 5px;
+    margin-left: 50px;
+    color: grey;
 }
 .example-card {
     max-width: 700px;
     margin-top: 10px;
   }
-  .image-st{
-    max-height: 100px;
-    width: auto;
-  } 
+  // .image-st{
+  //   max-width: 700px;
+  // } 
   .author-data{
     width: 100%;
   }
   .author-data span *{
     margin: 5px;
   }
+  .user{ 
+    float: right; 
+  }
   .avatar{
     background-size: cover; 
-    float: right;
     position: relative;
     bottom: -10px;
     background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    display: inline-block;
 
   }
-  .user-name{
-    float: right;
+  .user-name{    
     margin-top: 15px;
     margin-left:15px;
+    display: inline-block;
+  }
+  .user-title{ 
+    float: right; 
+  }
+  .avatar-title{
+    background-size: cover; 
+    position: relative;
+    top: -10px;
+    background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+
+  }
+  .user-name-title{   
+    margin-left:5px;
+    display: inline-block;
+    position: relative;
+    top:-18px;
+    font-size: 10px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  @media only screen and (max-width: 400px) {
+    
   }
   @media only screen and (max-width: 700px) {
+    .user {
+      display: none;
+   }
     .like {
        display: none;
     }
+    
   }
     @media only screen and (min-width: 700px) {
+      .user-title {
+        display: none;
+     }
       .mobile-likes {
          display: none;
       }

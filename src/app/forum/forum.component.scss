@@ -1,12 +1,12 @@
 @import "colors.scss";
 
-.forum-component{
-    display: flex;
-    flex-direction:column;
-    //justify-content: left;
-     align-items: center;
-    flex-wrap: wrap;  
-}
+// .forum-component{
+//     display: flex;
+//     flex-direction:column;
+//     //justify-content: left;
+//      //align-items: flex-start;
+//     flex-wrap: wrap;  
+// }
 
 :host ::ng-deep .mat-tab-header {
     position: sticky;
@@ -16,14 +16,14 @@ top:0;
     position: sticky;
     top: 0;
 }
-.message-box{
-    margin: 10px;
+// .message-box{
+//     margin: 10px;
     
-    text-align: center;
-    background-color: floralwhite;
-    border-radius: 8px;
-    border: 1px solid rgb(197, 197, 197);
-} 
+//    // text-align: center;
+//     background-color: floralwhite;
+//     border-radius: 8px;
+//     border: 1px solid rgb(197, 197, 197);
+// } 
 
   
   .example-header-image {
@@ -40,6 +40,24 @@ top:0;
     background-color: $bg-grey;
     height: calc(100% - 64px);
     min-height: calc(100% - 64px);
-    min-width: 100%; width: 100%;
+    //min-width: 100%; 
+    width: 100%;
     margin: 0px;position: fixed;
+}
+.site-options{
+    top:10px;
+    width: 300px;
+   // height: calc(100vh - 170px);
+    margin: 10px; 
+    float: inline-end;
+    position: sticky;
+}
+.post-block{
+    display: inline-block;
+    
+}
+@media only screen and (max-width: 1155px) {
+    .site-options{
+        display: none;
+    } 
 }

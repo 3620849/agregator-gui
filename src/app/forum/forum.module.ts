@@ -4,11 +4,12 @@ import { ForumComponent } from './forum.component';
 import { ForumRoutingModule } from './forum-routing.module';
 import { ProjectMaterialModuleModule } from '../shared/project-material-module/project-material-module.module';
 import { PostComponent } from './post/post.component';
+import { SiteOptionsComponent } from './site-options/site-options.component';
 
 
 
 @NgModule({
-  declarations: [ForumComponent, PostComponent],
+  declarations: [ForumComponent, PostComponent, SiteOptionsComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,

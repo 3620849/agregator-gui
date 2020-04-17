@@ -11,6 +11,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatDividerModule} from '@angular/material/divider'; 
+
+import {MatExpansionModule} from '@angular/material/expansion'; 
+
 @NgModule({
   declarations: [],
   exports: [
@@ -25,7 +28,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatMenuModule,
     MatSidenavModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule
     ]
 })
 export class ProjectMaterialModuleModule {
