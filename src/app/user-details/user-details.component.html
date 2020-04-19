@@ -1,7 +1,27 @@
+<mat-divider></mat-divider>
 <div class="user-details-component">
-    <h1 class="header" >Hello, {{userData?.username}}</h1>
-    <h2 class="header" >your id is , {{userData?.id}}</h2>
+    <div class="user-title">
+        <span><img [src]="userData?.photo || '/assets/face.png'" class="face"></span>
+        <span class="header" >{{userData?.username || userData?.login}}</span>
+        <button class="settings" mat-mini-fab>
+            <mat-icon>settings</mat-icon>
+        </button>
+    </div>
+    <p class="header">ID:{{userData?.id}}</p>
+    <div class="btn-options">
+        <button class="btn" mat-stroked-button>
+            Messages
+        </button>
+        <button class="btn" mat-stroked-button>
+            Comments
+        </button>
+        <button class="btn" mat-stroked-button>
+            Likes
+        </button>
+        <button class="btn" mat-stroked-button>
+            Black list
+        </button>
+    </div>
     <button mat-stroked-button class="btn-logout" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Exit</button>
-</div>
-
+</div> 
 

@@ -18,6 +18,7 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUserDetails().subscribe(response=>{
         this.userData=response;
+        console.log(response);
     });
     
   }
