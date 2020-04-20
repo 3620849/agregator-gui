@@ -5,11 +5,12 @@ import { ForumRoutingModule } from './forum-routing.module';
 import { ProjectMaterialModuleModule } from '../shared/project-material-module/project-material-module.module';
 import { PostComponent } from './post/post.component';
 import { SiteOptionsComponent } from './site-options/site-options.component';
+import { AddNewPostComponent } from './add-new-post/add-new-post.component';
 
 
 
 @NgModule({
-  declarations: [ForumComponent, PostComponent, SiteOptionsComponent],
+  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,
