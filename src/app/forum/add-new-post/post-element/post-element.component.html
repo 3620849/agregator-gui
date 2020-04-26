@@ -1,1 +1,19 @@
-<textarea #textAr placeholder="Enter text"></textarea>
+<ng-container [ngSwitch]="data?.type">
+    <ng-container *ngSwitchCase="'text'">
+        <app-element-text [data]="data"></app-element-text>
+    </ng-container>
+    <ng-container *ngSwitchCase="'img'">
+        <div *ngIf="!show">
+            <input [(ngModel)]="imgUrl" placeholder="paste url " class="input-img">
+            <button class="ok-btn" (click)="setImage()" mat-stroked-button>
+                Ok
+            </button>
+        </div>
+
+        <img class="new-image" *ngIf="show" [src]="data.url">
+    </ng-container>
+    <ng-container *ngSwitchCase="'video'">
+        enter video
+    </ng-container>
+
+</ng-container>

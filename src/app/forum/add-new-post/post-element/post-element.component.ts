@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, QueryList, ElementRef, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-post-element',
@@ -7,22 +7,17 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 })
 export class PostElementComponent implements OnInit {
   @Input()
-  data;
-  @ViewChild('textAr') textArea; 
-
-  constructor() { }
-  ngAfterViewInit() {
-    let area = this.textArea.nativeElement;
-    area.setAttribute('style', 'height:' + 32 + 'px;overflow-y:hidden;');
-    area.addEventListener("input", OnInput, false);
-     
-
-    function OnInput() {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
+  data; 
+  imgUrl  
+  show=false;
+  constructor( ) { }
+  
   ngOnInit(): void {
+  } 
+  setImage(){
+    this.show=true;
+    this.data.url = this.imgUrl;
+    console.log(this.imgUrl);
   }
 
 }
