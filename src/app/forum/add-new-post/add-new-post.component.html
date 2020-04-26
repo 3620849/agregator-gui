@@ -1,11 +1,37 @@
 <div class="add-new-post-component">
     <div class="header">
-        header
+        <textarea rows=1 maxlength=80 placeholder="Enter Text"></textarea>
     </div>
-    <div class="content">
-        content
-        <div class="content-builder">
-            builder
+    <div class="container">
+
+        <div class="content">
+            <div *ngFor="let el of post.content; let i = index;" class="content-block">
+                <div class="btn-section">
+                    <button mat-icon-button (click)="remove(i)"  class="rm-block">
+                        <mat-icon>remove_circle_outline</mat-icon>
+                    </button>
+                </div>
+                <div class="block-section">
+                    <app-post-element [data]="el"></app-post-element>
+                </div> 
+            </div>
+
+            <div class="content-builder">
+                <div class="btns">
+                    <button class="builder-btn" mat-button (click)="add('text')" mat-mini-fab color="accent">
+                        <mat-icon> text_fields</mat-icon>
+                    </button>
+
+                    <button mat-button disabled class="builder-btn" (click)="add('img')" mat-mini-fab color="accent">
+                        <mat-icon>image</mat-icon>
+                    </button>
+
+                    <button mat-button  disabled class="builder-btn" (click)="add('video')" mat-mini-fab color="accent">
+                        <mat-icon>movie</mat-icon>
+                    </button>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>

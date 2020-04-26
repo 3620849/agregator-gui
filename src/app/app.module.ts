@@ -15,7 +15,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegistrationComponent } from './registration/registration.component';
-import { SsoComponent } from './sso/sso.component';
+import { SsoComponent } from './sso/sso.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,7 @@ import { SsoComponent } from './sso/sso.component';
     TopBarComponent,
     UserDetailsComponent,
     RegistrationComponent,
-    SsoComponent
+    SsoComponent 
   ],
   imports: [
     BrowserModule,

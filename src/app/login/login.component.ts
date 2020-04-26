@@ -84,6 +84,7 @@ export class LoginComponent implements OnInit {
   auth2(provider:string){
     const options = `width=500,height=500,left=0,top=0`;
     let settings = this.appService.systemSettings;
+    if(settings){
     this.storage.scanTokenChanges();
     switch (provider) {
       case 'git':        
@@ -104,4 +105,5 @@ export class LoginComponent implements OnInit {
       };
     });
   }
+}
 }

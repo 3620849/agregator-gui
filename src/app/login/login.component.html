@@ -7,7 +7,7 @@
           <input matInput tabindex="-1" formControlName="mail" placeholder="e-mail">
         </mat-form-field>
         <mat-form-field>
-          <input #pass type="password" tabindex="-1" formControlName="password" matInput placeholder="Password">
+          <input #pass type="password" tabindex="-2" formControlName="password" matInput placeholder="Password">
           <button mat-button matSuffix mat-icon-button aria-label="Clear" (mousedown)="visible()" (mouseup)="visible()">
             <mat-icon class="eye">visibility</mat-icon>
           </button>
@@ -24,7 +24,7 @@
             <img width="25px" height="25px" src="/assets/dis.png">
             Disqus
           </button>
-          <button  mat-raised-button  (click)="auth2('fb')">
+          <button  mat-raised-button  (click)="auth2('fb')" disabled>
             <fa-icon [icon]="fb"></fa-icon>
             Facebook
           </button>  

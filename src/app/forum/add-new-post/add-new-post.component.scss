@@ -1,7 +1,65 @@
 @import "colors.scss";
 
 .add-new-post-component{
-    width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 75px);
     background-color: $bg-grey;
+}
+.container{
+    margin: 0 auto;
+    max-width: 700px;
+    
+}
+.content{
+    margin: 10px;
+    background-color: white;
+    border: 1px solid $bg-grey-middle;
+}
+.header{    
+    margin:  20px auto 20px auto;
+    max-width: 700px;
+    height: 32px;
+}
+
+.content-builder{
+    margin:  10px ;
+    max-width: 700px; 
+    min-height: 60px;
+    border-radius: 3px;
+}
+.builder-btn{ 
+    margin: 10px;
+}
+.btns{
+    text-align: center; 
+}
+.example-full-width
+{
+    width: 100%;
+}
+.content-block{
+    margin: 10px;
+    position: relative;
+}
+textarea{
+    width:calc(100% - 20px);
+    margin: 10px;
+    height: 32px;    
+    box-sizing: border-box;
+}
+.rm-block{
+    display: inline-block;
+    top:50%;
+    transform: translateY(-50%);
+    left: -50px;
+}
+.btn-section{
+    display: inline-block;
+    width: 0;
+    position: absolute;
+    height: 100%;
+   
+ }
+.block-section{
+    display: inline-block;
+    width: 100%;
 }

@@ -6,11 +6,12 @@ import { ProjectMaterialModuleModule } from '../shared/project-material-module/p
 import { PostComponent } from './post/post.component';
 import { SiteOptionsComponent } from './site-options/site-options.component';
 import { AddNewPostComponent } from './add-new-post/add-new-post.component';
+import { PostElementComponent } from './add-new-post/post-element/post-element.component';
 
 
 
 @NgModule({
-  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent],
+  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,
