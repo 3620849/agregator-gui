@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  base_url: 'http://localhost:8081',
-  //base_url: 'http://18.156.3.210:8081',//aws 
+  //base_url: 'http://localhost:8081',
+  base_url: 'http://18.156.3.210:8081',//aws 
   //base_url: 'http://192.168.43.62:8081',
   keep_alive_timeout:60000*5,
   oauth2Mode_timeout:1000*100,
