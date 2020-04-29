@@ -1,0 +1,19 @@
+<ng-container [ngSwitch]="block?.type">
+    <ng-container *ngSwitchCase="'text'">
+        <div calss="text-cont">
+            <p>
+               {{block.text}}
+            </p>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'img'">
+        <div calss="image-cont">
+            <img class="image-st" 
+                [src]="block.url">
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'video'">
+        not avialable
+    </ng-container>
+
+</ng-container>

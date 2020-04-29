@@ -11,5 +11,7 @@ export class ForumComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onTabChange($event){
+    console.log($event);
+  }
 }
