@@ -1,22 +1,32 @@
 <div class="forum-component">
   <mat-tab-group calss="mat-tab-group" mat-stretch-tabs>
-
     <mat-tab>
       <ng-template class="tab-header" mat-tab-label>
 
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        Tops
+        Top
       </ng-template>
-      <div class="site-options">
-        <app-site-options></app-site-options>
-      </div>
-      <div class="post-block">
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-      </div>
+      <div class="options-posts-wrapper">
+        <div class="site-options">
+          <app-site-options></app-site-options>
+        </div>
+        <div class="post-block">
+          <div class="button-wrapper">
+            <button class="add-post-btn" mat-stroked-button (click)="openOptionsPopup()" >
+              <!-- <object type="image/svg+xml" data="assets/feathure.svg" width="30" height="30" >
+                  Your browser does not support SVG
+              </object> -->
+              <mat-icon>all_inclusive</mat-icon>
+              Show options
+            </button>
+          </div>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+        </div>
+    </div>
     </mat-tab>
 
     <mat-tab>
@@ -24,16 +34,27 @@
         <mat-icon class="example-tab-icon">fiber_new</mat-icon>
         New
       </ng-template>
-      <div class="site-options">
-        <app-site-options></app-site-options>
-      </div>
-      <div class="post-block">
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-      </div>
+      <div class="options-posts-wrapper">
+        <div class="site-options">
+          <app-site-options></app-site-options>
+        </div>
+        <div class="post-block">
+          <div class="button-wrapper">
+            <button class="add-post-btn" mat-stroked-button (click)="openOptionsPopup()" >
+              <!-- <object type="image/svg+xml" data="assets/feathure.svg" width="30" height="30" >
+                  Your browser does not support SVG
+              </object> -->
+              <mat-icon>all_inclusive</mat-icon>
+              Show options
+            </button>
+          </div>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+        </div>
+    </div>
 
     </mat-tab>
 
@@ -42,24 +63,31 @@
         <mat-icon class="example-tab-icon">event icon</mat-icon>
         Monthly
       </ng-template>
-      <div class="site-options">
-        <app-site-options></app-site-options>
-      </div>
-      <div class="post-block">
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
-        <app-post></app-post>
+      <div class="options-posts-wrapper">
+        <div class="site-options">
+          <app-site-options></app-site-options>
+        </div>
+        <div class="post-block">
+          <div class="button-wrapper">
+
+            <button class="add-post-btn" mat-stroked-button (click)="openOptionsPopup()" >
+              <!-- <object type="image/svg+xml" data="assets/feathure.svg" width="30" height="30" >
+                  Your browser does not support SVG
+              </object> -->
+              <mat-icon>all_inclusive</mat-icon>
+              Show options
+            </button>
+
+          </div>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+          <app-post></app-post>
+        </div>
       </div>
 
     </mat-tab>
   </mat-tab-group>
-
-
-
-
-
-
 
 </div>
