@@ -13,9 +13,23 @@
   background: rgb(85, 85, 85);
   color: #fff;
 }
+
+.options-component{
+  padding: 10px;
+}
+
+.open-popup-btn{
+  display: none;
+}
+
 @media only screen and (min-width: 1155px) {
   .new-post-btn{
       display: none;
   } 
 }
- 
+
+@media only screen and (max-width: 1155px) {
+  .open-popup-btn{
+    display: inline-block;
+  }
+}

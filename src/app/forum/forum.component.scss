@@ -64,36 +64,19 @@ top:0;
     //float: right;
     position: sticky;
 }
+
 .post-block{
     display: inline-block;
     width: 65%;
-}
-
-.button-wrapper{
-    display: none;
-}
-
-.add-post-btn{
-    max-width: 732px;
-    margin-top: 10px;
-    //width: 100%;
-    width: calc(100% - 78px);
-    box-sizing: border-box;
-    background-color: rgb(255, 176, 147);
-}
-
-.options-component{
-    padding: 10px;
 }
 
 @media only screen and (max-width: 1155px) {
     .site-options{
         display: none;
     } 
-    .button-wrapper{
-        display: flex;
-        flex-grow: 1;
-        justify-content: flex-end;
+
+    .post-block{
+        width: 95%;
     }
 }
 

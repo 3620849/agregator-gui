@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { LoginComponent } from '../login/login.component';
 import { StorageService } from '../shared/services/storage.service';
 import { MatDrawer } from '@angular/material/sidenav';
+import { SiteOptionsComponent } from '../forum/site-options/site-options.component';
 
 @Component({
   selector: 'app-top-bar',
@@ -11,6 +12,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 })
 export class TopBarComponent implements OnInit {
   isLogedIn:boolean;
+  optionsRef: any;
   @Input("userDetailsMenu")
   userDetailsMenu: MatDrawer;
   constructor(public dialog: MatDialog,private storage:StorageService ) {
@@ -29,7 +31,19 @@ export class TopBarComponent implements OnInit {
 	      width: '500px',      
 	    });
   }
+
   openUserDialog(): void {
     this.userDetailsMenu.toggle();
+}
+
+openOptionsPopup(): void {
+  this.optionsRef = this.dialog.open(SiteOptionsComponent, {
+    panelClass:'options-component',
+    width: '350px'    
+  });
+}
+
+closeOptionsPopup(): void {
+  this.optionsRef.close();
 }
 }
