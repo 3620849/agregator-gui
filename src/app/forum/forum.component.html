@@ -6,18 +6,16 @@
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
         Top
       </ng-template>
-      <div class="options-posts-wrapper">
-        <div class="site-options">
-          <app-site-options></app-site-options>
+      <ng-template matTabContent>
+        <div class="options-posts-wrapper">
+          <div class="site-options">
+            <app-site-options></app-site-options>
+          </div>
+          <div class="post-block">
+            <app-post-feed [pageName]="'top'"></app-post-feed>
+          </div>
         </div>
-        <div class="post-block">
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-        </div>
-    </div>
+      </ng-template>
     </mat-tab>
 
     <mat-tab>
@@ -25,19 +23,16 @@
         <mat-icon class="example-tab-icon">fiber_new</mat-icon>
         New
       </ng-template>
-      <div class="options-posts-wrapper">
-        <div class="site-options">
-          <app-site-options></app-site-options>
+      <ng-template matTabContent>
+        <div class="options-posts-wrapper">
+          <div class="site-options">
+            <app-site-options></app-site-options>
+          </div>
+          <div class="post-block">
+            <app-post-feed [pageName]="'new'"></app-post-feed>
+          </div>
         </div>
-        <div class="post-block">
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-        </div>
-    </div>
-
+      </ng-template>
     </mat-tab>
 
     <mat-tab>
@@ -45,19 +40,16 @@
         <mat-icon class="example-tab-icon">event icon</mat-icon>
         Monthly
       </ng-template>
-      <div class="options-posts-wrapper">
-        <div class="site-options">
-          <app-site-options></app-site-options>
+      <ng-template matTabContent>
+        <div class="options-posts-wrapper">
+          <div class="site-options">
+            <app-site-options></app-site-options>
+          </div>
+          <div class="post-block">
+            <app-post-feed [pageName]="'monthly'"></app-post-feed>
+          </div>
         </div>
-        <div class="post-block">
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-          <app-post></app-post>
-        </div>
-      </div>
-
+      </ng-template>
     </mat-tab>
   </mat-tab-group>
 

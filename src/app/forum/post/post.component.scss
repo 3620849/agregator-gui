@@ -3,8 +3,7 @@
 .message-container{
     display: flex;
      flex-direction: row;
-     align-items: center;
-    justify-content: center;
+     align-items: center; 
 }
 .like {
     position: sticky;
@@ -14,8 +13,17 @@
     color: grey;
 }
 .example-card {
-    max-width: 700px;
+    flex-basis:700px;    
     margin-top: 10px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid $bg-grey-dark;
+    border-radius: 3px;
+  }
+  .header{ 
+    padding: 12px;
+    font-weight: 700;
+    font-size: 20px;
   }
   // .image-st{
   //   max-width: 700px;
@@ -32,7 +40,7 @@
   .avatar{
     background-size: cover; 
     position: relative;
-    bottom: -10px;
+    top: 3px;
     background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
     width: 30px;
     height: 30px;
@@ -41,9 +49,10 @@
 
   }
   .user-name{    
-    margin-top: 15px;
+    top: -5px;
     margin-left:15px;
     display: inline-block;
+    position: relative;
   }
   .user-title{ 
     float: right; 
@@ -86,4 +95,10 @@
       .mobile-likes {
          display: none;
       }
+    }
+    .block-container{
+      display: block; 
+    }
+    .footer{
+      padding: 10px;
     }
