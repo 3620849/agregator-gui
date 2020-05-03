@@ -4,6 +4,7 @@ import { Observable, throwError, of, iif } from 'rxjs';
 import { retry, catchError, timeout, concatMap, retryWhen, delay } from 'rxjs/operators';
 import { Constants } from '../constants';
 import { StorageService } from './storage.service';
+import { TokenType } from '../model/tokenType';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class HttpTokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.storage.getToken().token;   
     const tokenType = this.storage.getToken().tokenType;
+    console.log(this.storage.getClientId());
     if (!request.headers.has("NOT_INTERCEPT")) {
       if (token) {
         request = request.clone({
@@ -22,6 +24,6 @@ export class HttpTokenInterceptor implements HttpInterceptor {
       }
     }  
     return next.handle(request.clone({
-      headers: request.headers.delete("NOT_INTERCEPT")}));
+      headers: request.headers.set(TokenType.CLIENT_ID,this.storage.getClientId()).delete("NOT_INTERCEPT")}));
   }
 }

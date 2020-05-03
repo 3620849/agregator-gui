@@ -1,18 +1,18 @@
 <div class="message-container">
   <div class="like">
-    <div>
+    <button [disabled]="likeStatus==='like'" (click)="like()" mat-icon-button>
       <mat-icon>thumb_up</mat-icon>
-    </div>
-    <div>{{post.summary?.like || ' 0' }}</div>
-    <div>
+    </button>
+    <div>{{totalLike}}</div>
+    <button [disabled]="likeStatus==='dislike'" (click)="dislike()" mat-icon-button>
       <mat-icon>thumb_down</mat-icon>
-    </div>
+    </button>
   </div>
 
   <div class="example-card">
     <div class="header">{{post.header}}
       <div class="user-title">
-        <div class="avatar-title"></div>
+        <div class="avatar-title" [style.background-image]="'url('+post.userPhoto+')'"></div>
         <div class="user-name-title">{{post.userName}}</div>
       </div>
     </div>
@@ -24,13 +24,17 @@
     <div class="footer">
       <span class="author-data">
         <span class="mobile-likes">
-          <span>{{post.summary?.like || '0' }}</span>
-          <span style="position: relative;bottom: -4px;  color: grey;">
+
+          <button [disabled]="likeStatus==='like'" (click)="like()" mat-icon-button>
             <mat-icon>thumb_up</mat-icon>
-          </span>
-          <span style="position: relative;bottom: -4px;  color: grey;">
+          </button>
+
+          <span>{{totalLike}}</span>
+
+          <button [disabled]="likeStatus==='dislike'" (click)="dislike()" mat-icon-button>
             <mat-icon>thumb_down</mat-icon>
-          </span>
+          </button>
+          
         </span>
         <span style="position: relative;  color: grey;">
           {{post.summary?.views || '0'}}
@@ -41,7 +45,7 @@
           <mat-icon style="position: relative;  color: grey;bottom: -5px;">message</mat-icon>
         </span>
         <div class="user">
-          <div class="avatar"></div>
+          <div class="avatar" [style.background-image]="'url('+post.userPhoto+')'"></div>
           <div class="user-name">{{post.userName}}</div>
         </div>
 

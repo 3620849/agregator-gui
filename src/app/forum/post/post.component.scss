@@ -32,7 +32,8 @@
     width: 100%;
   }
   .author-data span *{
-    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   .user{ 
     float: right; 
@@ -41,7 +42,6 @@
     background-size: cover; 
     position: relative;
     top: 3px;
-    background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -60,15 +60,15 @@
   .avatar-title{
     background-size: cover; 
     position: relative;
-    top: -10px;
-    background-image: url('https://cs8.pikabu.ru/avatars/2662/m2662984-1121870435.png');
+    top: -5px;    
     width: 30px;
     height: 30px;
     border-radius: 50%;
     display: inline-block;
 
   }
-  .user-name-title{   
+  .user-name-title{  
+    font-weight: 400; 
     margin-left:5px;
     display: inline-block;
     position: relative;
@@ -100,5 +100,6 @@
       display: block; 
     }
     .footer{
-      padding: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
     }

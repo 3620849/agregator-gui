@@ -6,5 +6,6 @@ export enum TokenType{
     GGL_OAUTH_TOKEN="Ggl-Oauth-Token",
     TWT_OAUTH_TOKEN="Twt-Oauth-Token",
     DIS_OAUTH_TOKEN="Dis-Oauth-Token",
+    CLIENT_ID="Client-Id",
 
 }

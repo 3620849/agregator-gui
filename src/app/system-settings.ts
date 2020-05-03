@@ -10,4 +10,6 @@ export class SystemSettings {
     public  ggl_userAuthorizationUrl:string; 
 
     public  dis_userAuthorizationUrl:string; 
+
+    public clientId:string;
 }

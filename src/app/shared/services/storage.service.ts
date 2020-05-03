@@ -70,4 +70,14 @@ export class StorageService {
       }
     })
   }
+  setClientId(clientId:string){
+    let cid = this.storage.retrieve(TokenType.CLIENT_ID);
+    if(cid==null){
+      this.storage.store(TokenType.CLIENT_ID,clientId);
+    }
+
+  }
+  getClientId():string{
+    return this.storage.retrieve(TokenType.CLIENT_ID);
+  }
 }
