@@ -15,7 +15,7 @@ export class PostFeedComponent  {
 
   ngOnInit(): void {
    this.postService.getPostFeed(this.pageName).subscribe(response=>{
-      this.listOfPost=response['postList'];
+      this.listOfPost=response['messageList'];
    })  
   }
 
