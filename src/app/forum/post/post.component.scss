@@ -3,7 +3,7 @@
 .message-container{
     display: flex;
      flex-direction: row;
-     align-items: center; 
+     align-items: flex-start; 
 }
 .like {
     position: sticky;
@@ -102,4 +102,7 @@
     .footer{
       padding-left: 10px;
       padding-right: 10px;
+    }
+    .mobile-likes{
+      color: grey;
     }
