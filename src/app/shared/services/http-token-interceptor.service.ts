@@ -15,7 +15,7 @@ export class HttpTokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.storage.getToken().token;   
     const tokenType = this.storage.getToken().tokenType;
-    console.log(this.storage.getClientId());
+    let clientID = this.storage.getClientId();
     if (!request.headers.has("NOT_INTERCEPT")) {
       if (token) {
         request = request.clone({
@@ -24,6 +24,6 @@ export class HttpTokenInterceptor implements HttpInterceptor {
       }
     }  
     return next.handle(request.clone({
-      headers: request.headers.set(TokenType.CLIENT_ID,this.storage.getClientId()).delete("NOT_INTERCEPT")}));
+      headers: request.headers.set(TokenType.CLIENT_ID,clientID).delete("NOT_INTERCEPT")}));
   }
 }

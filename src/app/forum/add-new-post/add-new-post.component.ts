@@ -15,6 +15,7 @@ export class AddNewPostComponent implements OnInit {
   constructor(private postSrv:AddNewPostService) { }
 
   ngOnInit(): void {
+    this.post.content.push({text:"",type:"text"});
   }
   remove(index){
     this.post.content.splice(index,1);
