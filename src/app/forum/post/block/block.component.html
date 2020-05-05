@@ -1,9 +1,9 @@
 <ng-container [ngSwitch]="block?.type">
     <ng-container *ngSwitchCase="'text'">
         <div calss="text-cont">
-            <p>
+            <span class="text-block">
                {{block.text}}
-            </p>
+            </span>
         </div>
     </ng-container>
     <ng-container *ngSwitchCase="'img'">
