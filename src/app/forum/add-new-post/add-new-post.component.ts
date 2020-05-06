@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { AddNewPostService } from './add-new-post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-post',
@@ -12,7 +13,8 @@ export class AddNewPostComponent implements OnInit {
     content:[]
   }
   inputHeader:string;
-  constructor(private postSrv:AddNewPostService) { }
+  loading=false;
+  constructor(private postSrv:AddNewPostService,private router:Router) { }
 
   ngOnInit(): void {
     this.post.content.push({text:"",type:"text"});
@@ -29,8 +31,13 @@ export class AddNewPostComponent implements OnInit {
     
   }
  sendPost(){
-   console.log(this.post);
-   this.postSrv.sendNewPost(this.post);
+  this.loading=true; 
+   this.postSrv.sendNewPost(this.post).subscribe(res=>{
+
+    this.router.navigateByUrl("/forum",{ state: {tab: 'new'} });
+   },err=>{
+     this.loading=false;
+   });
  }
   changeHeader($event){
     this.post.header=this.inputHeader;
