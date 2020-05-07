@@ -37,3 +37,31 @@
      margin-bottom: 10px ;
      background-color: rgb(255, 176, 147);
   }
+
+.timer-wrapper{
+  h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  p{
+    font-size: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  .tik-tok{
+    -webkit-animation: blink 1s linear infinite;
+    animation: blink 1s linear infinite;
+
+    @-webkit-keyframes blink {
+      50% { color: rgb(34, 34, 34); }
+      51% { color: rgba(34, 34, 34, 0); }
+      100% { color: rgba(34, 34, 34, 0); }
+    }
+    @keyframes blink {
+      50% { color: rgb(34, 34, 34); }
+      51% { color: rgba(34, 34, 34, 0); }
+      100% { color: rgba(34, 34, 34, 0); }
+    }
+  }
+}

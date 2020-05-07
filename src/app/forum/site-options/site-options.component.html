@@ -43,8 +43,16 @@
         </object>
     </div>
     <div class="treasure-desc">
-         <h2>6 Days 20 hours</h2> 
-        <p>Time till next nomination</p>
+        <div *ngIf='!isTimer; else timer'>
+            <h2>{{days}} Days {{hours}} hours</h2> 
+            <p>Time till next nomination</p>
+        </div>
+        <ng-template #timer>
+            <div class="timer-wrapper">
+                <h2>00<span [ngClass]="{'tik-tok': 'isTikTok'}">:</span>{{timerMin}}<span [ngClass]="{'tik-tok': 'isTikTok'}">:</span>{{timerSec}}</h2>
+                <p>Choosing next winner...</p>
+            </div>
+        </ng-template>
     </div>
 </mat-card>
  
