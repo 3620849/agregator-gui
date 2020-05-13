@@ -8,9 +8,9 @@ import { environment } from 'src/environments/environment';
 export class PostFeedService {
 
   constructor(private http:HttpClient) { }
-  getPostFeed(name:string){
+  getPostFeed(name:string,skip:string){
     let options ={
-      params:new HttpParams().set("type",name).set("skip","0")
+      params:new HttpParams().set("type",name).set("skip",skip)
     }
     return this.http.get(environment.base_url+"/api/p/message",options);
   }

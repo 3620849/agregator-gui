@@ -84,3 +84,28 @@ textarea{
     margin-left: 10px;
     margin-right: 10px;
 }
+.btn-mob-section{
+    display: none;
+}
+@media only screen and (max-width: 1155px) {
+    .btn-mob-section{
+        display: inline-block;
+        width: 0;
+        position: absolute;
+        height: 100%;
+    }
+    .rm-block{
+        display: inline-block;
+        top:50%;
+        transform: translateY(-50%);
+        left: 10px;
+    }
+    .btn-section{
+        display: none;
+    } 
+    .add-new-post-component{
+        margin-right: 25px;
+        min-height: calc(100vh - 75px);
+        background-color: $bg-grey;
+    }
+}

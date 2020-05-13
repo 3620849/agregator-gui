@@ -1,8 +1,12 @@
 <div class="container">
-    <div class="content" *ngIf="listOfPost">
+    <div class="content" *ngIf="listOfPost && listOfPost.length>0">
         <app-post *ngFor="let post of listOfPost" [post]="post"></app-post>
+        <div class="scrl" (scrolled)="loadPost()"></div>
     </div>
+    <app-infinite-loader (scrolled)="loadPost()"></app-infinite-loader>
+    
     <div *ngIf="!listOfPost">
         Loading...
     </div>
 </div>
+ 

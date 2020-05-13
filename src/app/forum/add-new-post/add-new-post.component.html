@@ -21,6 +21,11 @@
                     <div class="block-section">
                         <app-post-element [data]="el"></app-post-element>
                     </div>
+                    <div class="btn-mob-section">
+                        <button mat-icon-button (click)="remove(i)" class="rm-block">
+                            <mat-icon>remove_circle_outline</mat-icon>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="content-builder">

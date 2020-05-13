@@ -1,6 +1,5 @@
 import { Component, OnInit, Input,AfterContentInit} from '@angular/core';
 import { PostFeedService } from './post-feed.service';
-
 @Component({
   selector: 'app-post-feed',
   templateUrl: './post-feed.component.html',
@@ -9,15 +8,20 @@ import { PostFeedService } from './post-feed.service';
 export class PostFeedComponent  {
   @Input()
   pageName:string;
-  listOfPost;
+  listOfPost=[];
+  skip="0";
 
   constructor(private postService:PostFeedService) { }
 
   ngOnInit(): void {
-   this.postService.getPostFeed(this.pageName).subscribe(response=>{
-     console.log(this.pageName);
-      this.listOfPost=response['messageList'];
-   })  
+     
+  }
+  loadPost(){
+    this.postService.getPostFeed(this.pageName,this.skip).subscribe(response=>{
+      this.listOfPost=[...this.listOfPost,...response['messageList']]; 
+      this.skip=""+this.listOfPost.length;
+      console.log(this.skip);
+   })
   }
 
 }

@@ -11,15 +11,15 @@ import { ElementTextComponent } from './add-new-post/element-text/element-text.c
 import { FormsModule } from '@angular/forms';
 import { PostFeedComponent } from './post-feed/post-feed.component';
 import { BlockComponent } from './post/block/block.component';
-
+import { InfiniteLoaderComponent } from './post-feed/infinite-loader/infinite-loader.component'; 
 
 @NgModule({
-  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent],
+  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent, InfiniteLoaderComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,
     ProjectMaterialModuleModule,
-    FormsModule
+    FormsModule 
   ] 
 })
 export class ForumModule { }
