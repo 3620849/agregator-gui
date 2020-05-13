@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { PostFeedComponent } from './post-feed/post-feed.component';
 import { BlockComponent } from './post/block/block.component';
 import { InfiniteLoaderComponent } from './post-feed/infinite-loader/infinite-loader.component'; 
-
+import {NgxImageCompressService} from 'ngx-image-compress';
 @NgModule({
   declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent, InfiniteLoaderComponent],
   imports: [
@@ -20,6 +20,7 @@ import { InfiniteLoaderComponent } from './post-feed/infinite-loader/infinite-lo
     ForumRoutingModule,
     ProjectMaterialModuleModule,
     FormsModule 
-  ] 
+  ], 
+  providers:[NgxImageCompressService]
 })
 export class ForumModule { }
