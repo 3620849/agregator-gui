@@ -16,6 +16,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegistrationComponent } from './registration/registration.component';
 import { SsoComponent } from './sso/sso.component'; 
+import { NotificationsComponent } from './notifications/notifications.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { SsoComponent } from './sso/sso.component';
     TopBarComponent,
     UserDetailsComponent,
     RegistrationComponent,
-    SsoComponent 
+    SsoComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

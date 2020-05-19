@@ -1,18 +1,5 @@
-<app-top-bar class="top-bar-container" [userDetailsMenu]="sidenav" *ngIf="!ssoMode"></app-top-bar>
+<app-top-bar class="top-bar-container" *ngIf="!ssoMode"></app-top-bar>
 
 <div class="mat-wraper">
-    <mat-sidenav-container autosize [ngClass]="{'side-cont':!ssoMode, 'side-cont-sso':ssoMode}">
-        <mat-sidenav class="side-user-details" #sidenav mode="side" position="end">                         
-            <div class="slider-control"> 
-            <button mat-button (click)="sidenav.toggle()" mat-mini-fab color="accent" >
-                    <mat-icon>chevron_right</mat-icon>
-                    </button> 
-                </div>        
-            <app-user-details [userDetailsMenu]="sidenav" *ngIf="isLogedIn"></app-user-details>
-        </mat-sidenav>
-
-        <mat-sidenav-content>
-            <router-outlet></router-outlet>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+    <router-outlet></router-outlet>
 </div>

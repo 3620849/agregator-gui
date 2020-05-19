@@ -13,21 +13,23 @@
     color: grey;
 }
 .example-card {
-    flex-basis:700px;    
+    flex-basis:500px;    
     margin-top: 10px;
     padding: 0;
     background-color: white;
     border: 1px solid $bg-grey-dark;
     border-radius: 3px;
+    max-width: 500px;
   }
   .header{ 
-    padding: 12px;
+    margin: 10px;
     font-weight: 700;
     font-size: 20px;
+    width: 100%;
   }
-  // .image-st{
-  //   max-width: 700px;
-  // } 
+  .text{
+    width: 100%;
+  }
   .author-data{
     width: 100%;
   }
@@ -55,12 +57,12 @@
     position: relative;
   }
   .user-title{ 
-    float: right; 
+    display: table-cell; 
+    min-width: 80px;
   }
   .avatar-title{
     background-size: cover; 
-    position: relative;
-    top: -5px;    
+    position: relative; 
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -80,9 +82,9 @@
     
   }
   @media only screen and (max-width: 700px) {
-    .user {
-      display: none;
-   }
+  //   .user {
+  //     display: none;
+  //  }
     .like {
        display: none;
     }

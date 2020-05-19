@@ -1,9 +1,61 @@
-<mat-divider></mat-divider>
 <div class="user-details-component">
+
+
     <div class="user-title">
         <span><img [src]="userData?.photo || '/assets/face.png'" class="face"></span>
+        <span class="header">{{userData?.username || userData?.login}}</span>
+        <button class="settings" mat-icon-button>
+            <mat-icon>settings</mat-icon>
+        </button>
+    </div>
+    <div class="btn-set">
+        <div class="row">
+            <div class="btn-in-top-right">
+                <div class="btn-h">
+                    <div><mat-icon style="color: yellowgreen;">notifications</mat-icon></div>
+                    <div class="btn-in-text">Notifications</div>
+                </div>
+            </div>
+            <div class="btn-in-top">
+                <div class="btn-h">
+                    <div><mat-icon style="color: green;">library_books</mat-icon></div>
+                    <div class="btn-in-text">Submissions</div>
+                </div>
+            </div>
+            <div class="btn-in-top">
+                <div class="btn-h">
+                    <div><mat-icon style="color: red;">favorite</mat-icon></div>
+                    <div class="btn-in-text">My List</div>
+                </div>
+            </div>
+            <div class="btn-in-bot-right">
+                <div class="btn-h">
+                    <div><mat-icon style="color: black;">block</mat-icon></div>
+                    <div class="btn-in-text">Black list</div>
+                </div>
+            </div>
+            <div class="btn-in-bot">
+                <div class="btn-h">
+                    <div><mat-icon style="color: rgb(172, 169, 169);">view_list</mat-icon></div>
+                    <div class="btn-in-text">Raitings</div>
+                </div>
+            </div>
+            <div class="btn-in-bot">
+                <div class="btn-h">
+                    <div><mat-icon style="color: blue;">trending_up</mat-icon></div>
+                    <div class="btn-in-text">Progress</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <button mat-menu-item>Manage subscription</button>
+    <button mat-menu-item>Change password</button>
+    <button mat-menu-item class="btn-logout" (click)="logout()">Exit</button>
+    <!-- <div class="user-title">
+        <span><img [src]="userData?.photo || '/assets/face.png'" class="face"></span>
         <span class="header" >{{userData?.username || userData?.login}}</span>
-        <button class="settings" mat-mini-fab>
+        <button class="settings" mat-icon-button >
             <mat-icon>settings</mat-icon>
         </button>
     </div>
@@ -22,6 +74,5 @@
             Black list
         </button>
     </div>
-    <button mat-stroked-button class="btn-logout" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Exit</button>
-</div> 
-
+    <button mat-stroked-button class="btn-logout" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Exit</button> -->
+</div>

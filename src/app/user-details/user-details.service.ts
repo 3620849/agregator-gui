@@ -5,17 +5,30 @@ import { StorageService } from '../shared/services/storage.service';
 import { Token } from '../shared/model/token';
 import { Constants } from '../shared/constants';
 import { environment } from 'src/environments/environment';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserDetailsService {
-  
-  constructor(private http:HttpClient) { 
-    
+  userDetails = new BehaviorSubject<any>(null);
+  constructor(private http: HttpClient, private storage: StorageService) {
+    storage.broadcastToken.subscribe(res => {
+      if (!res.isValid) {
+        this.userDetails.next(null);
+      } else {
+        this.updateUserDetails();
+      }
+    })
   }
-
-  getUserDetails(){
-    return this.http.get(environment.base_url+"/api/s/user");
+  updateUserDetails() {
+    if (!this.userDetails.value) {
+      this.http.get(environment.base_url + "/api/s/user").subscribe(res => {
+        this.userDetails.next(res);
+      })
+    }
+  }
+  getUserDetails() {
+    return this.userDetails;
   }
 }

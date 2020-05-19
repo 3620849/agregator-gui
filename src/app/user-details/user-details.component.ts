@@ -16,9 +16,9 @@ export class UserDetailsComponent implements OnInit {
   constructor(private userService:UserDetailsService,private storage:StorageService) { }
 
   ngOnInit(): void {
+    this.userService.updateUserDetails();
     this.userService.getUserDetails().subscribe(response=>{
         this.userData=response;
-        console.log(response);
     });
     
   }

@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { StorageService } from '../shared/services/storage.service';
 import { MatDrawer } from '@angular/material/sidenav';
 import { SiteOptionsComponent } from '../forum/site-options/site-options.component';
+import { UserDetailsService } from '../user-details/user-details.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -15,7 +16,8 @@ export class TopBarComponent implements OnInit {
   optionsRef: any;
   @Input("userDetailsMenu")
   userDetailsMenu: MatDrawer;
-  constructor(public dialog: MatDialog,private storage:StorageService ) {
+  userDetails;
+  constructor(public dialog: MatDialog,private storage:StorageService,private userService:UserDetailsService ) {
     storage.startKeepAlive();
   }
 
@@ -23,6 +25,9 @@ export class TopBarComponent implements OnInit {
     this.isLogedIn=this.storage.getToken().isValid;
     this.storage.broadcastToken.subscribe(res=>{
       this.isLogedIn=res.isValid;
+      this.userService.getUserDetails().subscribe(details=>{         
+          this.userDetails=details;         
+      })
     });
   }
 	openLoginDialog(): void {
