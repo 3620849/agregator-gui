@@ -21,8 +21,8 @@ export class UserDetailsService {
       }
     })
   }
-  updateUserDetails() {
-    if (!this.userDetails.value) {
+  updateUserDetails() {    
+    if (!this.userDetails.value ) {
       this.http.get(environment.base_url + "/api/s/user").subscribe(res => {
         this.userDetails.next(res);
       })
@@ -30,5 +30,11 @@ export class UserDetailsService {
   }
   getUserDetails() {
     return this.userDetails;
+  }
+  getUserDetailsHttp(){
+    return this.http.get<any>(environment.base_url + "/api/s/user");
+  }
+  setUserDetails (details){
+    this.userDetails.next(details);
   }
 }

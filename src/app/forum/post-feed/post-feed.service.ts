@@ -14,4 +14,7 @@ export class PostFeedService {
     }
     return this.http.get(environment.base_url+"/api/p/message",options);
   }
+  getMessageByIds(listOfIds:{idsList:string[]}){
+    return this.http.post<any[]>(environment.base_url+"/api/p/message",listOfIds);
+  }
 }

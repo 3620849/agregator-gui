@@ -12,9 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { PostFeedComponent } from './post-feed/post-feed.component';
 import { BlockComponent } from './post/block/block.component';
 import { InfiniteLoaderComponent } from './post-feed/infinite-loader/infinite-loader.component'; 
-import {NgxImageCompressService} from 'ngx-image-compress'; 
+import {NgxImageCompressService} from 'ngx-image-compress';
+import { MyListComponent } from './my-list/my-list.component'; 
 @NgModule({
-  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent, InfiniteLoaderComponent],
+  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent, InfiniteLoaderComponent, MyListComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,

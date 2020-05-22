@@ -12,8 +12,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./forum.component.scss']
 })
 export class ForumComponent implements OnInit {
-  tabs={top:0,new:1,monthly:2
-  }
+  tabs={top:0,new:1,monthly:2}
   dialogRef: any;
   state$: Observable<object>;
   tab=this.tabs.top;

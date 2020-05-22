@@ -1,0 +1,17 @@
+<div class="my-list-component">   
+         
+          <div   class="center" >
+            <div class="header">My List <mat-icon class="heart">favorite</mat-icon></div>
+            <div class="content"*ngIf="listOfMessage && listOfMessage.length>0" >
+                <app-post *ngFor="let message of listOfMessage" [post]="message"></app-post>
+                <div class="scrl" (scrolled)="loadPost()"></div>
+            </div>
+            <app-infinite-loader (scrolled)="loadPost()"></app-infinite-loader>
+            
+            <div *ngIf="!listOfMessage">
+                Loading...
+            </div>
+
+
+        </div>   
+</div>
