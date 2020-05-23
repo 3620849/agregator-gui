@@ -1,0 +1,24 @@
+@import "colors.scss";
+
+.coments-feed{
+    
+        margin-top: 10px;
+        margin-bottom: 100px;
+        min-height: 100px;
+        background-color: white;
+        border-radius: 3px;
+        border: 1px solid $bg-grey-dark;
+        margin-left: 94px;
+        max-width: 500px;
+    
+}
+.top-header{
+    color: grey;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+    .coments-feed{
+        margin-left: 0px;
+    }
+}

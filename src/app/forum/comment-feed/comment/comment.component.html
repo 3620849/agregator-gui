@@ -1,0 +1,24 @@
+<div class="message-container">
+    <div class="header">
+        <span class="mobile-likes">
+            <span class="count">{{totalLike}}</span>
+            <button class="btn-like" [disabled]="likeStatus==='like'" (click)="like()" mat-icon-button>
+                <mat-icon>arrow_drop_up</mat-icon>
+            </button>
+            <button class="btn-diz" [disabled]="likeStatus==='dislike'" (click)="dislike()" mat-icon-button>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <span class="user">
+                <div class="avatar" [style.background-image]="'url('+comment.userPhoto+')'"></div>
+                <span class="user-name">{{comment.userName}}</span>
+            </span>
+        </span>
+
+    </div>
+    <div class="block-container">
+        <app-block *ngFor="let block of comment.content" [block]="block"></app-block>
+    </div>
+    <div class="ans">
+        answer
+    </div>
+</div>

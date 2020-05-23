@@ -20,7 +20,6 @@ export class PostFeedComponent  {
     this.postService.getPostFeed(this.pageName,this.skip).subscribe(response=>{
       this.listOfPost=[...this.listOfPost,...response['messageList']]; 
       this.skip=""+this.listOfPost.length;
-      console.log(this.skip);
    })
   }
 

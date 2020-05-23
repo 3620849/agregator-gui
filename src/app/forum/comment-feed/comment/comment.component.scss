@@ -1,0 +1,41 @@
+@import "colors.scss";
+
+.btn-like{
+    color: grey;
+    width: 15px;
+}
+.btn-diz{
+    color: grey;
+    width: 15px;
+    top:-1px;
+    margin-right: 5px;
+
+}
+.count{
+    margin-left: 10px;
+    color: grey;
+}
+.avatar{
+    background-size: cover;
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+
+  }
+  .user-name{
+      color: green;
+  }
+  .block-container{
+      margin-left: 15px;
+  }
+  .ans{
+    color: green;
+    margin-left: 15px;
+    font-size:15px;
+    cursor: pointer;
+  }

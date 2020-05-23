@@ -1,39 +1,34 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { LikeService } from 'src/app/shared/services/like.service';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  selector: 'app-comment',
+  templateUrl: './comment.component.html',
+  styleUrls: ['./comment.component.scss']
 })
-export class PostComponent implements OnInit {
+export class CommentComponent implements OnInit {
   @Input()
-  post;
-  @Input()
-  mode;
+  comment;
   totalLike;
   likeStatus: "like" | "pristine" | "dislike" = "pristine";
   canLike = true;
   canDislike = true;
-  content
+  
+
   constructor(private likeSrv: LikeService) { }
 
   ngOnInit(): void {
-    this.totalLike = this.post.summary.like - this.post.summary.dislike;
-    this.content=this.post.shortContent;
-    if(this.mode==='full'){
-      this.content=this.post.content;
-    }
+    this.totalLike = this.comment.summary.like - this.comment.summary.dislike; 
   }
 
   like() {
     if (this.likeStatus === "pristine") {
-      this.likeSrv.likeOrDis(this.post.id, "1").subscribe(res => {
+      this.likeSrv.likeOrDis(this.comment.id, "1").subscribe(res => {
         ++this.totalLike;
         this.likeStatus = "like";
       });
     } else {
-      this.likeSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
+      this.likeSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
         ++this.totalLike;
         ++this.totalLike;
         this.likeStatus = "like";
@@ -43,16 +38,17 @@ export class PostComponent implements OnInit {
   }
   dislike() {
     if (this.likeStatus === "pristine") {
-      this.likeSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
+      this.likeSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
         --this.totalLike;
         this.likeStatus = "dislike";
       });
     } else {
-      this.likeSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
+      this.likeSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
         --this.totalLike;
         --this.totalLike;
         this.likeStatus = "dislike";
       });
     }
   }
+
 }

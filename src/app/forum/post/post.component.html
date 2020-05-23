@@ -23,7 +23,7 @@
 
     <mat-divider></mat-divider>
     <div class="block-container">
-      <app-block *ngFor="let block of post.shortContent" [block]="block"></app-block>
+      <app-block *ngFor="let block of content" [block]="block"></app-block>
     </div>
     <div class="footer">
       <span class="author-data">
@@ -44,7 +44,7 @@
           {{post.summary?.views || '0'}}
           <mat-icon style="position: relative;  color: grey;bottom: -5px;"> remove_red_eye</mat-icon>
         </span>
-        <span style="position: relative;  color: grey;">
+        <span [routerLink]="['/forum/post/'+post.id]" style="cursor: pointer; position: relative;  color: grey;">
           {{post.summary?.comment || '0'}}
           <mat-icon style="position: relative;  color: grey;bottom: -5px;">message</mat-icon>
         </span>
