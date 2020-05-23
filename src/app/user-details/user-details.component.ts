@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserDetailsService } from './user-details.service';
-import { StorageService } from '../shared/services/storage.service';
-import { Token } from '../shared/model/token';
-import { MatDrawer } from '@angular/material/sidenav';
+import { StorageService } from '../shared/services/storage.service'; 
 
 @Component({
   selector: 'app-user-details',
@@ -10,8 +8,6 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
-  @Input("userDetailsMenu")
-  userDetailsMenu: MatDrawer;
   userData;
   constructor(private userService:UserDetailsService,private storage:StorageService) { }
 
@@ -24,7 +20,7 @@ export class UserDetailsComponent implements OnInit {
   }
   logout(){
     this.storage.cleanToken();
-    this.userDetailsMenu.toggle();
+    
   }
 
 }

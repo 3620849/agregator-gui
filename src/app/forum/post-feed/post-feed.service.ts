@@ -17,4 +17,10 @@ export class PostFeedService {
   getMessageByIds(listOfIds:{idsList:string[]}){
     return this.http.post<any[]>(environment.base_url+"/api/p/message",listOfIds);
   }
+  getMessageByUserId(userId:string,skip:string){
+    let options ={
+      params:new HttpParams().set("userId",userId).set("skip",skip)
+    }
+    return this.http.get<any[]>(environment.base_url+"/api/s/user/submissions",options);
+  }
 }
