@@ -1,5 +1,10 @@
 <div class="coments-feed">
     <div class="top-header">Comments</div>
     <mat-divider></mat-divider>
-    <app-comment [comment]="testComment"></app-comment>
+    <app-new-comment (onAdd)="addToComments($event)" [parent]="post"></app-new-comment>
+    <div *ngIf="comments">
+        <div *ngFor="let c of comments"> 
+             <app-comment [comment]="c"></app-comment> 
+        </div>
+    </div>
 </div>

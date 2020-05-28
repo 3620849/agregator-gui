@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, BehaviorSubject } from 'rxjs';
 import { PostFeedService } from '../post-feed/post-feed.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { PostFeedService } from '../post-feed/post-feed.service';
 export class ExpandedPostComponent implements OnInit {
   private subscription: Subscription;
   id:string;
-  message;
+  message=new BehaviorSubject<any>(null);
+  post;
   constructor(private activateRoute: ActivatedRoute,private postService:PostFeedService){
           
 }
@@ -20,7 +21,8 @@ export class ExpandedPostComponent implements OnInit {
     this.activateRoute.params.subscribe(params=>{
       this.id=params['id'];
       this.postService.getMessageByIds({idsList:[this.id]}).subscribe(list=>{
-        this.message=list['messageList'][0];
+        this.message.next(list['messageList'][0]);
+        this.post = list['messageList'][0];
       });
     });
   }

@@ -2,12 +2,11 @@
 <div class="my-list-component">   
          
     <div   class="center" > 
-      <div class="content"*ngIf="message" >
-          <app-post [post]="message" [mode]="message.content?'full':'short'"></app-post>           
-      </div>
-       
-      <app-comment-feed></app-comment-feed>
-     
+      <div class="content" *ngIf="post" >
+          <app-post [post]="post" [mode]="post.content?'full':'short'"></app-post> 
+          <app-comment-feed [post]="post"></app-comment-feed>          
+      </div>       
+      
       <div *ngIf="!message">
           Loading...
       </div>

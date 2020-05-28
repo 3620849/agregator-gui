@@ -17,9 +17,10 @@ import { MyListComponent } from './my-list/my-list.component';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { ExpandedPostComponent } from './expanded-post/expanded-post.component';
 import { CommentFeedComponent } from './comment-feed/comment-feed.component';
-import { CommentComponent } from './comment-feed/comment/comment.component'; 
+import { CommentComponent } from './comment-feed/comment/comment.component';
+import { NewCommentComponent } from './comment-feed/new-comment/new-comment.component'; 
 @NgModule({
-  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent, InfiniteLoaderComponent, MyListComponent, SubmissionsComponent, ExpandedPostComponent, CommentFeedComponent, CommentComponent],
+  declarations: [ForumComponent, PostComponent, SiteOptionsComponent, AddNewPostComponent, PostElementComponent, ElementTextComponent, PostFeedComponent, BlockComponent, InfiniteLoaderComponent, MyListComponent, SubmissionsComponent, ExpandedPostComponent, CommentFeedComponent, CommentComponent, NewCommentComponent],
   imports: [
     CommonModule,
     ForumRoutingModule,

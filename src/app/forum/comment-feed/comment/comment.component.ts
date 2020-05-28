@@ -13,6 +13,8 @@ export class CommentComponent implements OnInit {
   likeStatus: "like" | "pristine" | "dislike" = "pristine";
   canLike = true;
   canDislike = true;
+  showSubComment=false;
+  answer=false;
   
 
   constructor(private likeSrv: LikeService) { }
@@ -50,5 +52,10 @@ export class CommentComponent implements OnInit {
       });
     }
   }
-
+  toggleSub(){
+    this.showSubComment=!this.showSubComment;
+  }
+  toggleAns(){
+    this.answer=!this.answer;
+  }
 }

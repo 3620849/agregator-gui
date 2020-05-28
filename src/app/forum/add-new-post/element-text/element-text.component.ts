@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-element-text',
@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
   styleUrls: ['./element-text.component.scss']
 })
 export class ElementTextComponent implements OnInit {
-  @ViewChild('textAr') textArea; 
+  @ViewChild('textAr') textArea: ElementRef;; 
   @Input()
   data
   userInput;
@@ -28,5 +28,13 @@ export class ElementTextComponent implements OnInit {
   }
   onKey($event){
     this.data.text=this.userInput;
+    
+    
+  }
+  public cleanField(){
+    this.data.text=undefined;
+    this.userInput="";
+    let area = this.textArea.nativeElement;
+    area.setAttribute('style', 'height:' + 32 + 'px;overflow-y:hidden;');
   }
 }

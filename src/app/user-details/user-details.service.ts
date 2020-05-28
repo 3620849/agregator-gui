@@ -15,7 +15,7 @@ export class UserDetailsService {
   constructor(private http: HttpClient, private storage: StorageService) {
     storage.broadcastToken.subscribe(res => {
       if (!res.isValid) {
-        this.userDetails.next(null);
+        this.userDetails.next({userName:"Anonymous",userPhoto:"/assets/logo.svg"});
       } else {
         this.updateUserDetails();
       }

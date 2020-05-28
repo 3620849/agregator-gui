@@ -9,7 +9,11 @@
                 <mat-icon>arrow_drop_down</mat-icon>
             </button>
             <span class="user">
-                <div class="avatar" [style.background-image]="'url('+comment.userPhoto+')'"></div>
+                <div class="avatar" *ngIf="comment.userPhoto;else nophoto"
+                    [style.background-image]="'url('+comment.userPhoto+')'"></div>
+                <ng-template #nophoto>
+                    <div class="avatar" [style.background-image]="'url(/assets/logo.svg)'"></div>
+                </ng-template>
                 <span class="user-name">{{comment.userName}}</span>
             </span>
         </span>
@@ -18,7 +22,27 @@
     <div class="block-container">
         <app-block *ngFor="let block of comment.content" [block]="block"></app-block>
     </div>
-    <div class="ans">
+    <div (click)="toggleAns()" class="ans" *ngIf="comment.id">
         answer
     </div>
+    <div *ngIf="answer" class="new-comment">
+        <app-new-comment (addPressed)="toggleAns()" [parent]="comment"></app-new-comment>
+    </div>
+    <div *ngIf="comment.comments?.length>0">
+        <div class="exp" (click)="toggleSub()" *ngIf="showSubComment">
+            <mat-icon class="spoiler-btn">remove_circle</mat-icon>collapse
+        </div>
+        <div class="exp" (click)="toggleSub()" *ngIf="!showSubComment">
+            <mat-icon class="spoiler-btn">add_box</mat-icon>expand
+        </div>
+    </div>
+    <div *ngIf="showSubComment">
+        <div class="sub-comment-cont" *ngIf="comment.comments?.length>0">
+            <div class="line"></div>
+            <div class="sub-comment">
+                <app-comment *ngFor="let c of comment.comments" [comment]="c"></app-comment>
+            </div>
+        </div>
+    </div>
+
 </div>
