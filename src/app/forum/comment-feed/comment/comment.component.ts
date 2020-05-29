@@ -13,7 +13,7 @@ export class CommentComponent implements OnInit {
   likeStatus: "like" | "pristine" | "dislike" = "pristine";
   canLike = true;
   canDislike = true;
-  showSubComment=false;
+  showSubComment=true;
   answer=false;
   
 
@@ -58,4 +58,5 @@ export class CommentComponent implements OnInit {
   toggleAns(){
     this.answer=!this.answer;
   }
+  
 }
