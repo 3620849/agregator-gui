@@ -1,5 +1,33 @@
 <div class="forum-component">
-  <mat-tab-group [selectedIndex]="tab" calss="mat-tab-group" mat-stretch-tabs>
+    <!-- <div class="navigation">
+    <div class="top-menu-btn" (click)="switchList('top')">
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      <div class="btn-text">
+        Top
+      </div>
+    </div>
+    <div class="top-menu-btn"  (click)="switchList('new')">
+      <mat-icon class="example-tab-icon">fiber_new</mat-icon>
+      <div class="btn-text">
+        New
+      </div>
+    </div>
+    <div class="top-menu-btn"  (click)="switchList('monthly')">
+      <mat-icon class="example-tab-icon">event icon</mat-icon>
+      <div class="btn-text">
+        Monthly
+      </div>
+    </div>
+  </div>
+  <div class="central-group">
+    <div class="post-block">
+      <app-post-feed [pageName]="pageName"></app-post-feed>
+    </div>
+    <div class="site-options">
+      <app-site-options></app-site-options>
+    </div>
+  </div>   -->
+    <mat-tab-group [selectedIndex]="tab" calss="mat-tab-group" mat-stretch-tabs>
     <mat-tab>
       <ng-template class="tab-header" mat-tab-label>
 
@@ -7,29 +35,31 @@
         Top
       </ng-template>
       <ng-template matTabContent>
-        <div class="options-posts-wrapper">
-          <div class="site-options">
-            <app-site-options></app-site-options>
-          </div>
+        <div class="central-group">
+           
           <div class="post-block">
             <app-post-feed [pageName]="'top'"></app-post-feed>
+          </div>
+          <div class="site-options">
+            <app-site-options></app-site-options>
           </div>
         </div>
       </ng-template>
     </mat-tab>
 
-    <mat-tab>
+     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">fiber_new</mat-icon>
         New
       </ng-template>
       <ng-template matTabContent>
-        <div class="options-posts-wrapper">
-          <div class="site-options">
-            <app-site-options></app-site-options>
-          </div>
+        <div class="central-group">
+          
           <div class="post-block">
             <app-post-feed [pageName]="'new'"></app-post-feed>
+          </div>
+          <div class="site-options">
+            <app-site-options></app-site-options>
           </div>
         </div>
       </ng-template>
@@ -41,16 +71,17 @@
         Monthly
       </ng-template>
       <ng-template matTabContent>
-        <div class="options-posts-wrapper">
-          <div class="site-options">
-            <app-site-options></app-site-options>
-          </div>
+        <div class="central-group">
+          
           <div class="post-block">
             <app-post-feed [pageName]="'monthly'"></app-post-feed>
+          </div>
+          <div class="site-options">
+            <app-site-options></app-site-options>
           </div>
         </div>
       </ng-template>
     </mat-tab>
-  </mat-tab-group>
+  </mat-tab-group>   
 
 </div>

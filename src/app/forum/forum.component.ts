@@ -17,6 +17,7 @@ export class ForumComponent implements OnInit {
   state$: Observable<object>;
   tab=this.tabs.top;
   currentIndex=0;
+  pageName='top';
   constructor(public dialog: MatDialog,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -39,5 +40,7 @@ export class ForumComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+  switchList(listName:string){
+    this.pageName = listName;
+  }
 }

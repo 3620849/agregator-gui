@@ -4,6 +4,8 @@
     display: flex;
      flex-direction: row;
      align-items: flex-start;
+     justify-content: center;
+     min-width: 360px;
 }
 .like {
     position: sticky;
@@ -24,8 +26,7 @@
   .header{ 
     margin: 10px;
     font-weight: 700;
-    font-size: 20px;
-    width: 100%;
+    font-size: 20px; 
   }
   .text{
     width: 100%;
@@ -88,6 +89,9 @@
     .like {
        display: none;
     }
+    .message-container{
+      width: 100vw;
+    }
     
   }
     @media only screen and (min-width: 700px) {
@@ -97,6 +101,10 @@
       .mobile-likes {
          display: none;
       }
+      .message-container{
+        min-width: 500px;
+      }
+      
     }
     .block-container{
       display: block; 

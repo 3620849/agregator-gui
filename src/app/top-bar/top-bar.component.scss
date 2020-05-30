@@ -1,6 +1,6 @@
 @import "colors.scss";
 .logo{
-  margin-right: 10px;
+  margin: 4px;
   bottom: 4px;
 }
 .example-icon {
@@ -9,25 +9,25 @@
   
   .example-spacer {
     flex: 1 1 auto;
-  }
- mat-toolbar {
-  background: rgb(85, 85, 85);
-  color: #fff;
- 
+  } 
+ .mat-toolbar {
+    min-height: 45px;
+    height: 45px;
+    background-color: rgb(85, 85, 85);
+    color: #fff;
+    min-width: 335px;
+    position: relative; 
 }
-.mat-toolbar-multiple-rows{
-  min-height: 45px;
-  height: 45px;
-}
+
 
 .right-btn-menu{
 color: $bg-grey-dark;
+float: right;
 }
 
 .logo-name{ 
     font-weight: 400;
     font-size: 17px;
-    margin-right: 50px;
 }
 .tool-btn{
   top:2px;

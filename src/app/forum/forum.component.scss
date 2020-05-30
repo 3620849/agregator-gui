@@ -15,7 +15,26 @@ top:0;
       height: 1px;
       background-color: grey;
   }
-
+.navigation{
+    width: 100%;
+    height: 34px;
+    border-bottom: 1px solid $bg-grey-dark;
+    background-color: $bg-grey;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.top-menu-btn{
+    padding-top: 5px;
+    color:grey;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-text{
+    display: inline;
+    position: relative;
+    top: -5px;
+}
 .mat-tab-group{
     background-color: $bg-grey;
     height: calc(100% - 64px);
@@ -23,37 +42,43 @@ top:0;
     width: 100%;
     margin: 0px;position: fixed;
 }
-
-.options-posts-wrapper{
+.forum-component{
+    max-width:  100% ; 
+}
+.central-group{
+    min-height: calc(100vh - 48px);
+    
+     display: flex; 
+     flex-direction: row;
+     justify-content: center; 
+}
+.post-block{
+    flex-flow: column wrap;
+    display: inline-block; 
+}
+.stiky-cont{
     display: flex;
-    flex-grow: 1;
-    flex-direction: row-reverse;
-    justify-content: center;
-    max-width: 1250px;
-    margin: 0 auto;
+    // // flex-grow: 1;
+     flex-direction: row;
+     justify-content: center;
+    position: relative;
 }
 .site-options{
-    top:10px;
+    flex-flow: column wrap;    
+    bottom: 10px;
     max-width: 300px;
-    width: 30%;
-    height: min-content;
+    height: auto;
     margin: 10px; 
-    margin-left: 12px;
-    position: sticky;
+    margin-left: 12px; 
 }
 
-.post-block{
-    display: inline-block;
-    width: 48%;
-}
-
-@media only screen and (max-width: 1155px) {
+@media only screen and (max-width: 920px) {
     .site-options{
         display: none;
     } 
 
     .post-block{
-        width: 98%;
+       margin:5px;
     }
 }
 

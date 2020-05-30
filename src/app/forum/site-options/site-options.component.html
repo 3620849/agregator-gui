@@ -1,55 +1,60 @@
-<button class="btn" mat-stroked-button  routerLink="/forum/add-new-post" >
-    <object type="image/svg+xml" data="assets/feathure.svg" width="30" height="30" >
-        Your browser does not support SVG
-    </object>Add new post
-</button>
-<mat-card class="treasure">
-    <div class="treasurebox">
-        <object type="image/svg+xml" data="assets/treasure.svg" width="50" height="50" >
+<div class="site-options-component">
+    <button class="btn" mat-stroked-button routerLink="/forum/add-new-post">
+        <object type="image/svg+xml" data="assets/feathure.svg" width="30" height="30">
             Your browser does not support SVG
-        </object>
-    </div>
-    <div class="treasure-desc">
-        This week most liked comment or post will receive treasure
-    </div>
-    <p>Money prize: 100 <mat-icon style="position: relative;bottom: -6px;"> attach_money</mat-icon>
-    </p>
+        </object>Add new post
+    </button>
+    <mat-card class="treasure">
+        <div class="treasurebox">
+            <object type="image/svg+xml" data="assets/treasure.svg" width="50" height="50">
+                Your browser does not support SVG
+            </object>
+        </div>
+        <div class="treasure-desc">
+            This week most liked comment or post will receive treasure
+        </div>
+        <p>Money prize: 100 <mat-icon style="position: relative;bottom: -6px;"> attach_money</mat-icon>
+        </p>
 
-    <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                Our last champion:
-            </mat-panel-title>
-            <mat-panel-description>
-                     Jenifer Lopez <mat-icon><div class="avatar"></div></mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          Expansion panels can be disabled using the disabled attribute. A disabled expansion panel can't be toggled by the user, but can still be manipulated programmatically.
-        </mat-expansion-panel>
-    </mat-accordion>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Our last champion:
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Jenifer Lopez <mat-icon>
+                            <div class="avatar"></div>
+                        </mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                Expansion panels can be disabled using the disabled attribute. A disabled expansion panel can't be
+                toggled by the user, but can still be manipulated programmatically.
+            </mat-expansion-panel>
+        </mat-accordion>
 
-    <!-- <span>Our last chempion:
+        <!-- <span>Our last chempion:
         <div class="user">
             <div class="avatar"></div><div class="user-name">Jenifer Lopez</div>
           </div>
     </span> -->
-</mat-card>
+    </mat-card>
 
-<mat-card class="treasure">
-    <div class="treasurebox">
-        <object type="image/svg+xml" data="assets/clock.svg" width="50" height="50" >
+    <mat-card class="treasure">
+        <div class="treasurebox">
+            <object type="image/svg+xml" data="assets/clock.svg" width="50" height="50">
+                Your browser does not support SVG
+            </object>
+        </div>
+        <div class="treasure-desc">
+            <h2>6 Days 20 hours</h2>
+            <p>Time till next nomination</p>
+        </div>
+    </mat-card>
+
+    <button style="width: 100%; margin-bottom: 10px ; background-color: rgb(255, 176, 147);" mat-stroked-button>
+        <object type="image/svg+xml" data="assets/scroll.svg" width="40" height="40">
             Your browser does not support SVG
-        </object>
-    </div>
-    <div class="treasure-desc">
-         <h2>6 Days 20 hours</h2> 
-        <p>Time till next nomination</p>
-    </div>
-</mat-card>
- 
-<button style="width: 100%; margin-bottom: 10px ; background-color: rgb(255, 176, 147);" mat-stroked-button>
-    <object type="image/svg+xml" data="assets/scroll.svg" width="40" height="40" >
-        Your browser does not support SVG
-    </object>Raiting
-</button>
+        </object>Raiting
+    </button>
+</div>

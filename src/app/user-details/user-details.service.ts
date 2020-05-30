@@ -21,8 +21,9 @@ export class UserDetailsService {
       }
     })
   }
-  updateUserDetails() {    
-    if (!this.userDetails.value ) {
+  updateUserDetails() { 
+    console.log(this.userDetails.value);   
+    if (!this.userDetails.value || this.userDetails.value.userName==="Anonymous") {
       this.http.get(environment.base_url + "/api/s/user").subscribe(res => {
         this.userDetails.next(res);
       })

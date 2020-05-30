@@ -1,16 +1,8 @@
- 
-<div class="my-list-component">   
-         
-    <div   class="center" > 
-      <div class="content" *ngIf="post" >
-          <app-post [post]="post" [mode]="post.content?'full':'short'"></app-post> 
-          <app-comment-feed [post]="post"></app-comment-feed>          
-      </div>       
-      
-      <div *ngIf="!message">
-          Loading...
-      </div>
-
-
-  </div>   
+<div class="expanded-post-component">
+    <div class="central-group">
+        <div class="post-block" *ngIf="post">
+            <app-post [post]="post" [mode]="post.content?'full':'short'"></app-post>
+            <app-comment-feed [post]="post"></app-comment-feed>
+        </div>
+    </div>
 </div>

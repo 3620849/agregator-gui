@@ -1,29 +1,10 @@
 @import "colors.scss";
-
+.main{
+    width: 100%;
+    min-width: 335px;
+    min-height: 100vh;
+    background-color: $bg-grey
+}
 .top-bar-container{
     position: relative;
-}
-%cont{
-    background-color: $bg-grey;
-    
-   // top: 64px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-.side-cont{ 
-    @extend %cont;
-}
-.side-cont-sso{
-    @extend %cont;
-    top:0;
-}
-
-.side-user-details{
-    z-index: -1;
-    position: fixed;
-    background-color: $bg-grey;
-}
-.slider-control{
-    margin: 15px;
 }
