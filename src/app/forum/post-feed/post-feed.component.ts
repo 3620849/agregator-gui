@@ -17,11 +17,9 @@ export class PostFeedComponent {
 
   ngOnInit(): void {
     this.pageName.subscribe(page => {
-       
       this.currentPageName = page;
       this.listOfPost = [];
       this.skip = "0";
-      //this.loadPost();
     })
   }
   loadPost() {

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Location } from '@angular/common';
 import { AppService } from './app.service';
-import { StorageService } from './shared/services/storage.service';
+import { StorageService } from './shared/services/storage.service'; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     this.currentURL = window.location.href; 
     appService.loadSystemSettings();
   }
-  ngOnInit() {
+  ngOnInit() { 
     if(this.currentURL.includes("sso")){
       this.ssoMode=true;
     }
@@ -30,3 +30,4 @@ export class AppComponent implements OnInit {
    
 }
 }
+ 

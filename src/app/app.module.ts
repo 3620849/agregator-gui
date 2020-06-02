@@ -25,7 +25,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
     UserDetailsComponent,
     RegistrationComponent,
     SsoComponent,
-    NotificationsComponent
+    NotificationsComponent 
   ],
   imports: [
     BrowserModule,
