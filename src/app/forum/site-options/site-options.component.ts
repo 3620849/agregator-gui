@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimeContorlService } from 'src/app/shared/services/time-contorl.service';
 
 @Component({
   selector: 'app-site-options',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./site-options.component.scss']
 })
 export class SiteOptionsComponent implements OnInit {
-
-  constructor() { }
+  nominationTime:string;
+  constructor(private timeControlSrv:TimeContorlService) { }
 
   ngOnInit(): void {
+    this.timeControlSrv.time.subscribe(time =>{
+      this.nominationTime= time;
+    })
   }
 
 }
