@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { LikeService } from 'src/app/shared/services/like.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { PostService } from 'src/app/shared/services/post.service';  
 
 @Component({
   selector: 'app-post',
@@ -16,7 +16,9 @@ export class PostComponent implements OnInit {
   canLike = true;
   canDislike = true;
   content
-  constructor(private likeSrv: LikeService) { }
+  @Output()
+  editEvent:EventEmitter<any>=new EventEmitter<any>();
+  constructor(private postSrv: PostService) { }
 
   ngOnInit(): void {
     this.totalLike = this.post.summary.like - this.post.summary.dislike;
@@ -28,12 +30,12 @@ export class PostComponent implements OnInit {
 
   like() {
     if (this.likeStatus === "pristine") {
-      this.likeSrv.likeOrDis(this.post.id, "1").subscribe(res => {
+      this.postSrv.likeOrDis(this.post.id, "1").subscribe(res => {
         ++this.totalLike;
         this.likeStatus = "like";
       });
     } else {
-      this.likeSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
+      this.postSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
         ++this.totalLike;
         ++this.totalLike;
         this.likeStatus = "like";
@@ -43,16 +45,20 @@ export class PostComponent implements OnInit {
   }
   dislike() {
     if (this.likeStatus === "pristine") {
-      this.likeSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
+      this.postSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
         --this.totalLike;
         this.likeStatus = "dislike";
       });
     } else {
-      this.likeSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
+      this.postSrv.likeOrDis(this.post.id, "-1").subscribe(res => {
         --this.totalLike;
         --this.totalLike;
         this.likeStatus = "dislike";
       });
     }
+  }
+  remove(id){
+    this.editEvent.emit({type:"DELETE",id:id})
+    
   }
 }

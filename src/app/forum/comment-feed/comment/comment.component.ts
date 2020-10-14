@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { LikeService } from 'src/app/shared/services/like.service';
+import { PostService } from 'src/app/shared/services/post.service';
 
 @Component({
   selector: 'app-comment',
@@ -17,7 +17,7 @@ export class CommentComponent implements OnInit {
   answer=false;
   
 
-  constructor(private likeSrv: LikeService) { }
+  constructor(private postSrv: PostService) { }
 
   ngOnInit(): void {
     this.totalLike = this.comment.summary.like - this.comment.summary.dislike; 
@@ -25,12 +25,12 @@ export class CommentComponent implements OnInit {
 
   like() {
     if (this.likeStatus === "pristine") {
-      this.likeSrv.likeOrDis(this.comment.id, "1").subscribe(res => {
+      this.postSrv.likeOrDis(this.comment.id, "1").subscribe(res => {
         ++this.totalLike;
         this.likeStatus = "like";
       });
     } else {
-      this.likeSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
+      this.postSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
         ++this.totalLike;
         ++this.totalLike;
         this.likeStatus = "like";
@@ -40,12 +40,12 @@ export class CommentComponent implements OnInit {
   }
   dislike() {
     if (this.likeStatus === "pristine") {
-      this.likeSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
+      this.postSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
         --this.totalLike;
         this.likeStatus = "dislike";
       });
     } else {
-      this.likeSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
+      this.postSrv.likeOrDis(this.comment.id, "-1").subscribe(res => {
         --this.totalLike;
         --this.totalLike;
         this.likeStatus = "dislike";

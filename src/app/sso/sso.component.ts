@@ -30,24 +30,26 @@ export class SsoComponent implements OnInit {
   }
   signIn(){
     this.sso.getToken(this.code,this.provider).subscribe(response=>{ 
-      let tokenType:TokenType;
-      switch(this.provider){
-        case "git": tokenType=TokenType.GIT_HUB_OAUTH_TOKEN;break;
-        case "vk": tokenType=TokenType.VK_OAUTH_TOKEN;break;
-        case "fb": tokenType=TokenType.FB_OAUTH_TOKEN;break;
-        case "ggl": tokenType=TokenType.GGL_OAUTH_TOKEN;break;
-        case "dis": tokenType=TokenType.DIS_OAUTH_TOKEN;break;
-        default: this.status="fial no such provider";setTimeout(()=>{window.close();},3000);
-      }         
+      let tokenType:TokenType=TokenType.X_TOKEN;
+
+      // switch(this.provider){
+      //   case "git": tokenType=TokenType.GIT_HUB_OAUTH_TOKEN;break;
+      //   case "vk": tokenType=TokenType.VK_OAUTH_TOKEN;break;
+      //   case "fb": tokenType=TokenType.FB_OAUTH_TOKEN;break;
+      //   case "ggl": tokenType=TokenType.GGL_OAUTH_TOKEN;break;
+      //   case "dis": tokenType=TokenType.DIS_OAUTH_TOKEN;break;
+      //   default: this.status="fial no such provider";setTimeout(()=>{window.close();},3000);
+      // }    
       this.storage.updateToken(new Token(response['access_token'],true,tokenType));               
       this.status='success'; 
       this.storage.broadcastToken.subscribe(result=>{
-        window.close()
+        setTimeout(()=>{window.close();},1000);
       });
       
     },error=>{
       this.status='error cant get token'; 
       setTimeout(()=>{window.close();},3000);
+
     });
   }
   

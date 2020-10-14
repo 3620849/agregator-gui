@@ -24,13 +24,14 @@
     max-width: 500px;
   }
   .header{ 
-    margin: 10px;
+    margin: 4px;
     font-weight: 700;
     font-size: 20px; 
     word-break: break-all;
   }
   .text{
-    width: 100%;
+    width: 99%;
+    display: inline-block;
   }
   .author-data{
     width: 100%;
@@ -116,4 +117,11 @@
     }
     .mobile-likes{
       color: grey;
+    }
+    .remove{
+      color: grey;
+      position: relative;
+      display: inline-block;
+      width: 0;
+      left: -31px;
     }

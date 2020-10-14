@@ -40,19 +40,16 @@ export class TimeContorlService {
     }
     let hours = Math.floor(time % this.DAY / this.HOUR);
     if (hours > 1) {
-      res += hours + " hours";
+      res += " "+hours + " hours";
     } if (hours === 1) {
-      res += hours + " hour";
-    }
-    console.log("time"+time);
-
-    console.log("days"+days);
+      res += " "+hours + " hour";
+    } 
     if (days === 0) {
       let minutes = Math.floor(time % this.DAY % this.HOUR / this.MINUTES);
       if (minutes > 1) {
-        res += minutes + " minutes"
+        res += " "+minutes + " minutes"
       } else if (minutes === 1) {
-        res += minutes + " minute"
+        res += " "+minutes + " minute"
       }
     }
  

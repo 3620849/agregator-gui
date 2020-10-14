@@ -17,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegistrationComponent } from './registration/registration.component';
 import { SsoComponent } from './sso/sso.component'; 
 import { NotificationsComponent } from './notifications/notifications.component';
+import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
     UserDetailsComponent,
     RegistrationComponent,
     SsoComponent,
-    NotificationsComponent 
+    NotificationsComponent,
+    ConfirmationDialogComponent 
   ],
   imports: [
     BrowserModule,
