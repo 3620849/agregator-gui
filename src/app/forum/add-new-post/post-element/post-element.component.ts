@@ -16,6 +16,12 @@ export class PostElementComponent implements OnInit {
   imgUrl
   show = false;
   loading = false;
+
+  @ViewChild('videoPlayer') videoplayer: ElementRef;
+
+toggleVideo() {
+    this.videoplayer.nativeElement.play();
+}
   constructor(private fileSrv: FileService, private imageCompress: NgxImageCompressService) { }
 
   ngOnInit(): void {
@@ -117,5 +123,18 @@ export class PostElementComponent implements OnInit {
       this.loading = false;
     })
 
+  }
+
+  handleVideoInput(event: any){
+    this.loading = true;
+    var fileName: any;
+    this.file = event.target.files[0]; 
+    if(this.file.size < 5000000){
+      this.sendFile(this.file);
+    } else {
+      console.log("can't load file more than 50mb");
+      this.loading = false;
+
+    }
   }
 }

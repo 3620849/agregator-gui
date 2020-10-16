@@ -17,7 +17,16 @@
         <img class="new-image" *ngIf="show" [src]="data.url">
     </ng-container>
     <ng-container *ngSwitchCase="'video'">
-        enter video
+        <div *ngIf="!show">
+            <button type="button"  mat-stroked-button (click)="fileInput.click()">Choose File</button>
+            <input accept=".mp4"  hidden (change)="handleVideoInput($event)" #fileInput type="file" id="file">
+        </div>
+        <div *ngIf="loading">
+            <mat-spinner></mat-spinner>
+          </div>
+        <video  class="new-image" autobuffer="autobuffer" autoplay="autoplay" *ngIf="show" controls="controls" (click)="toggleVideo()" #videoPlayer>
+            <source [src]="data.url" type='video/mp4' codecs="avc1.42E01E, mp4a.40.2"/>
+        </video>
     </ng-container>
 
 </ng-container>
