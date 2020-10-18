@@ -60,5 +60,5 @@ export class PostComponent implements OnInit {
   remove(id){
     this.editEvent.emit({type:"DELETE",id:id})
     
-  }
+  } 
 }
