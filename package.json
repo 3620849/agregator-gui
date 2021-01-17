@@ -26,6 +26,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "material-design-icons": "^3.0.1",
     "ngx-image-compress": "^8.0.4",
     "ngx-webstorage": "^5.0.0",
     "rxjs": "~6.5.4",

@@ -18,6 +18,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SsoComponent } from './sso/sso.component'; 
 import { NotificationsComponent } from './notifications/notifications.component';
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { PolicyComponent } from './policy/policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confir
     RegistrationComponent,
     SsoComponent,
     NotificationsComponent,
-    ConfirmationDialogComponent 
+    ConfirmationDialogComponent,
+    PolicyComponent 
   ],
   imports: [
     BrowserModule,

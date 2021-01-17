@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, BehaviorSubject } from 'rxjs';
+import { SEOService } from 'src/app/shared/services/seo.service';
 import { PostFeedService } from '../post-feed/post-feed.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ExpandedPostComponent implements OnInit {
   message=new BehaviorSubject<any>(null);
   post;
   metadata:any ={};
-  constructor(private activateRoute: ActivatedRoute,private postService:PostFeedService){
+  constructor(private activateRoute: ActivatedRoute,private postService:PostFeedService,private seoService: SEOService){
           
 }
 
@@ -31,16 +32,18 @@ export class ExpandedPostComponent implements OnInit {
     
   }
   extractMetadata(){
+    this.seoService.updateTitle(this.post.header)
+    this.seoService.updateMetaInfo("og:title",this.post.header);
     for(let i =0;i<this.post.content.length;++i){
       if(this.post.content[i].type=="text"){
         let content = this.post.content[i].text;
-        this.metadata.desc = content.substring(0,Math.min(20,content.length));
+        this.seoService.updateMetaInfo("og:description",content.substring(0,Math.min(40,content.length)));
         break;
       }
     }
     for(let i =0;i<this.post.content.length;++i){
-      if(this.post.content[i].type=="img" || this.post.content[i].type=="video"){        
-        this.metadata.img = this.post.content[i].url;
+      if(this.post.content[i].type=="img" || this.post.content[i].type=="video"){
+        this.seoService.updateMetaInfo("og:image",this.post.content[i].url);
         break;
       }
     }

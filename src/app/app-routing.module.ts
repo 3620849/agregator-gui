@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { PolicyComponent } from './policy/policy.component';
 import { SsoComponent } from './sso/sso.component';
 
 
@@ -8,6 +9,7 @@ const routes: Routes = [
 {path:'', loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule)},
 {path:'login',component:LoginComponent},
 {path:'sso',component:SsoComponent},
+{path:'policy',component:PolicyComponent},
 {path:'forum', loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule)},
 { path: 'shop', loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule) }
 ];

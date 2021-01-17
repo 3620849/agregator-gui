@@ -3,56 +3,58 @@
         Loading...
     </div>
     <div *ngIf="!loading">
-        <div class="header">
-            <textarea rows=1 [(ngModel)]="inputHeader" (ngModelChange)="changeHeader($event)" maxlength=65
-                placeholder="Header"></textarea>
+        <form (ngSubmit)="sendPost()" [formGroup]="form">
 
-        </div>
-        <div class="container">
-
-            <div class="content">
-
-                <div *ngFor="let el of post.content; let i = index;" class="content-block">
-                    <div class="btn-section">
-                        <button mat-icon-button (click)="remove(i)" class="rm-block">
-                            <mat-icon>remove_circle_outline</mat-icon>
-                        </button>
-                    </div>
-                    <div class="block-section">
-                        <app-post-element [data]="el"></app-post-element>
-                    </div>
-                    <div class="btn-mob-section">
-                        <button mat-icon-button (click)="remove(i)" class="rm-block">
-                            <mat-icon>remove_circle_outline</mat-icon>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="content-builder">
-                    <div class="btns">
-                        <button class="builder-btn" mat-button (click)="add('text')" mat-mini-fab color="accent">
-                            <mat-icon> text_fields</mat-icon>
-                        </button>
-
-                        <button mat-button class="builder-btn" (click)="add('img')" mat-mini-fab color="accent">
-                            <mat-icon>image</mat-icon>
-                        </button>
-
-                        <button mat-button class="builder-btn" (click)="add('video')" mat-mini-fab
-                            color="accent">
-                            <mat-icon>movie</mat-icon>
-                        </button>
-                    </div>
-                </div>
+            <div class="header">
+                <textarea rows=1 [ngClass]="{'err':!header.valid && !header.pristine || !header.valid && header.touched}" formControlName="header" maxlength=65 placeholder="Header">
+                </textarea>
 
             </div>
-        </div>
-        <div class="post">
-            <div class="padding-btn">
-                <button class="post-btn" (click)="sendPost()" mat-stroked-button>
-                    Post
-                </button>
+            <div class="container">
+
+                <div class="content">
+
+                    <div *ngFor="let el of post.content; let i = index;" class="content-block">
+                        <div class="btn-section">
+                            <button mat-icon-button (click)="remove(i)" class="rm-block">
+                                <mat-icon>remove_circle_outline</mat-icon>
+                            </button>
+                        </div>
+                        <div class="block-section">
+                            <app-post-element [data]="el"></app-post-element>
+                        </div>
+                        <div class="btn-mob-section">
+                            <button mat-icon-button (click)="remove(i)" class="rm-block">
+                                <mat-icon>remove_circle_outline</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="content-builder">
+                        <div class="btns">
+                            <button class="builder-btn" mat-button (click)="add('text')" mat-mini-fab color="accent">
+                                <mat-icon> text_fields</mat-icon>
+                            </button>
+
+                            <button mat-button class="builder-btn" (click)="add('img')" mat-mini-fab color="accent">
+                                <mat-icon>image</mat-icon>
+                            </button>
+
+                            <button mat-button class="builder-btn" (click)="add('video')" mat-mini-fab color="accent">
+                                <mat-icon>movie</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+            <div class="post">
+                <div class="padding-btn">
+                    <button class="post-btn" type="submit" mat-stroked-button>
+                        Post
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

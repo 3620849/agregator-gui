@@ -15,7 +15,7 @@
     <ng-container *ngSwitchCase="'video'">
         <div calss="image-cont">
             <video  class="new-image" width="100%" autobuffer="autobuffer" controls="controls" #videoPlayer>
-                <source [src]="block.url" type='video/mp4' codecs="avc1.42E01E, mp4a.40.2"/>
+                <source [src]="block.url+'#t=0.1'"  type='video/mp4' codecs="avc1.42E01E, mp4a.40.2"/>
             </video>
         </div>
     </ng-container>
